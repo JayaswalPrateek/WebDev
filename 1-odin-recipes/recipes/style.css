@@ -1,0 +1,31 @@
+body{
+    background-color:khaki;
+}
+
+h1{
+text-align: center;
+font-size: 75px;
+font-weight:750;
+font-family:cursive;
+text-decoration:underline;
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+h2{
+font-size: 40px;
+font-weight:500;
+font-family:cursive;
+}
+p{
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: justify;
+}
+ul,ol{
+    font-size: 20px;
+    font-family: sans-serif;
+}
