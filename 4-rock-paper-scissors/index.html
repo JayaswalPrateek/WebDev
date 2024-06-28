@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<script>
+    'use strict';
+    const rock = "rock", paper = "paper", scissors = "scissors";
+    const legalChoices = [rock, paper, scissors];
+
+    const getComputerChoice = () => legalChoices[Math.floor(Math.random() * legalChoices.length)];
+
+    function getHumanChoice() {
+        let choice = prompt("Pick between Rock, Paper or Scissors:");
+        while (!choice || !legalChoices.includes(choice.toLowerCase()))
+            choice = (!choice
+                ? prompt("Pick between Rock, Paper, or Scissors:")
+                : prompt(`Invalid choice: ${choice}!`));
+        return choice.toLowerCase();
+    }
+
+
+    function playGame() {
+        let humanScore = 0, computerScore = 0;
+        function playRound() {
+            const computerChoice = getComputerChoice();
+            const humanChoice = getHumanChoice();
+            if (humanChoice === computerChoice) {
+                humanScore++;
+                computerScore++;
+                console.log("Draw");
+            }
+            else if ((humanChoice === rock && computerChoice === scissors) ||
+                (humanChoice === paper && computerChoice === rock) ||
+                (humanChoice === scissors && computerChoice === rock)) {
+                console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+                humanScore++;
+            }
+            else {
+                console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+                computerScore++;
+            }
+        }
+        const ROUNDS = 5;
+        for (let i = 0; i < ROUNDS; i++) playRound();
+        if (humanScore === computerScore) console.log("Its a Draw!");
+        else if (humanScore > computerScore) console.log("You Won!");
+        else console.log("You Lost!");
+    }
+
+    playGame();
+</script>
