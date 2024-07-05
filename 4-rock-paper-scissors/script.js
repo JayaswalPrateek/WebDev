@@ -25,7 +25,7 @@ document.getElementById('buttonContainer').addEventListener("click", e => {
     }
     else if ((humanChoice === rock && computerChoice === scissors) ||
         (humanChoice === paper && computerChoice === rock) ||
-        (humanChoice === scissors && computerChoice === rock)) {
+        (humanChoice === scissors && computerChoice === paper)) {
         humanScore++;
         resultBox.textContent=`You win! ${humanChoice} beats ${computerChoice}, Keep going!`;
         color = "lightgreen";
