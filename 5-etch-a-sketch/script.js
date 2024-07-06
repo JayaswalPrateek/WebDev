@@ -14,7 +14,19 @@ function buildGrid(dimension) {
 }
 document.getElementById("container").addEventListener("mouseover", (e) => {
     if (e.target.id === "container") return;
-    e.target.style.backgroundColor = "black";
+    if (!e.target.style.backgroundColor || !e.target.dataset.brightnessLevel) {
+        const x = Math.floor(Math.random() * 256);
+        const y = Math.floor(Math.random() * 256);
+        const z = Math.floor(Math.random() * 256);
+        e.target.style.backgroundColor = `rgb(${x}, ${y}, ${z})`;
+        e.target.dataset.brightnessLevel = 1;
+    } else {
+        let brightnessLevel = parseFloat(e.target.dataset.brightnessLevel);
+        brightnessLevel -= 0.1;
+        if (brightnessLevel < 0) brightnessLevel = 0;
+        e.target.dataset.brightnessLevel = brightnessLevel;
+        e.target.style.filter = `brightness(${brightnessLevel})`;
+    }
 });
 document.getElementById("configure").addEventListener("click", (e) => {
     const newDimension = Number(prompt("Enter New Dimension: "));
