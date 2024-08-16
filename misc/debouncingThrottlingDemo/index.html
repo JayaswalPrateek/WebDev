@@ -6,27 +6,21 @@
     <title>Debouncing and Throttling Example</title>
 </head>
 <body>
-    <h1>Form Input Example</h1>
+	<input type="text" id="inputField" placeholder="Type something...">
 
-    <!-- Form without debouncing or throttling -->
-    <div>
-        <h2>Without Debouncing or Throttling</h2>
-        <input type="text" id="no-control" placeholder="Type something...">
-        <p id="no-control-output">Start typing...</p>
+    <div class="output-container">
+        <span class="output-label">Without Debouncing/Throttling:</span>
+        <span id="normalOutput"></span>
     </div>
 
-    <!-- Form with debouncing -->
-    <div>
-        <h2>With Debouncing</h2>
-        <input type="text" id="debounced" placeholder="Type something...">
-        <p id="debounced-output">Start typing...</p>
+    <div class="output-container">
+        <span class="output-label">With Debouncing:</span>
+        <span id="debouncedOutput"></span>
     </div>
 
-    <!-- Form with throttling -->
-    <div>
-        <h2>With Throttling</h2>
-        <input type="text" id="throttled" placeholder="Type something...">
-        <p id="throttled-output">Start typing...</p>
+    <div class="output-container">
+        <span class="output-label">With Throttling:</span>
+        <span id="throttledOutput"></span>
     </div>
 
     <script src="script.js"></script>
