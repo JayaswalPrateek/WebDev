@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing and Throttling Example</title>
+</head>
+<body>
+    <h1>Form Input Example</h1>
+
+    <!-- Form without debouncing or throttling -->
+    <div>
+        <h2>Without Debouncing or Throttling</h2>
+        <input type="text" id="no-control" placeholder="Type something...">
+        <p id="no-control-output">Start typing...</p>
+    </div>
+
+    <!-- Form with debouncing -->
+    <div>
+        <h2>With Debouncing</h2>
+        <input type="text" id="debounced" placeholder="Type something...">
+        <p id="debounced-output">Start typing...</p>
+    </div>
+
+    <!-- Form with throttling -->
+    <div>
+        <h2>With Throttling</h2>
+        <input type="text" id="throttled" placeholder="Type something...">
+        <p id="throttled-output">Start typing...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
