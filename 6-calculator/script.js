@@ -1,20 +1,23 @@
 "use strict";
-let displayText = "";
-let lhs, operator, rhs;
+let displayText = "", lhs, operator, operatorIndex, rhs;
 const add = (x, y) => x + y;
 const subtract = (x, y) => x - y;
 const multiply = (x, y) => x * y;
 const divide = (x, y) => x / y;
-function operate(lhs, operator, rhs) {
+function operate() {
+  lhs = Number(lhs);
+  rhs = Number(rhs);
   switch (operator) {
-    case "+":
+    case "add":
       return add(lhs, rhs);
-    case "-":
+    case "subtract":
       return subtract(lhs, rhs);
-    case "*":
+    case "multiply":
       return multiply(lhs, rhs);
-    case "/":
+    case "divide":
       return divide(lhs, rhs);
+    case "":
+      return;
     default:
       console.error(`Matching Error: Couldn't Match Operator ${operator}`);
   }
@@ -34,19 +37,18 @@ function handleClick(event) {
         display(displayText.slice(0, -1));
         break;
       case "divide":
-        console.log("divided");
-        break;
+        appendToDisplay("÷");
       case "multiply":
-        console.log("multiplied");
-        break;
+        appendToDisplay("×");
       case "subtract":
-        console.log("subtracted");
-        break;
+        appendToDisplay("−")
       case "add":
-        console.log("added");
+        appendToDisplay("+")
+        operator = event.target.id;
         break;
       case "evaluate":
-        console.log("evaluated");
+        rhs = displayText.slice(operatorIndex + 1);
+        display(operate());
         break;
       case "decimal":
         console.log("dotted");
@@ -60,6 +62,10 @@ function display(text) {
 }
 
 function appendToDisplay(text) {
+  if (["÷", "×", "−", "+"].includes(text)) {
+    lhs = displayText;
+    operatorIndex = displayText.length;
+  }
   displayText += text;
   display(displayText);
 }
