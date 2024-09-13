@@ -1,5 +1,5 @@
 "use strict";
-let displayText = "", lhs, operator, operatorIndex, rhs;
+let displayText = "", lhs, operator, operatorIndex, operatorSelected = false, rhs;
 const add = (x, y) => x + y;
 const subtract = (x, y) => x - y;
 const multiply = (x, y) => x * y;
@@ -37,21 +37,19 @@ function handleClick(event) {
         display(displayText.slice(0, -1));
         break;
       case "divide":
-        appendToDisplay("÷");
+        appendToDisplay("÷", event);
+        break;
       case "multiply":
-        appendToDisplay("×");
+        appendToDisplay("×", event);
+        break;
       case "subtract":
-        appendToDisplay("−")
+        appendToDisplay("−", event);
+        break;
       case "add":
-        appendToDisplay("+")
-        operator = event.target.id;
+        appendToDisplay("+", event)
         break;
       case "evaluate":
-        rhs = displayText.slice(operatorIndex + 1);
-        display(operate());
-        rhs = "";
-        operator = "";
-        operatorIndex = null;
+        evaluate();
         break;
       case "decimal":
         console.log("dotted");
@@ -59,15 +57,31 @@ function handleClick(event) {
     }
 }
 
+function evaluate() {
+  lhs = displayText.slice(0, operatorIndex);
+  rhs = displayText.slice(operatorIndex + 1);
+  alert(`lhs is ${lhs}, operator is ${operator} and rhs is ${rhs}`)
+  lhs = operate()
+  display(lhs);
+  rhs = "";
+  operator = "";
+  operatorIndex = null;
+}
+
 function display(text) {
   displayText = text;
   container.querySelector("#display").innerHTML = displayText;
 }
 
-function appendToDisplay(text) {
+function appendToDisplay(text, event) {
   if (["÷", "×", "−", "+"].includes(text)) {
-    lhs = displayText;
+    if (operatorSelected) {
+      evaluate();
+      operatorSelected = false;
+    }
+    operator = event.target.id
     operatorIndex = displayText.toString().length;
+    operatorSelected = true;
   }
   displayText += text;
   display(displayText);
