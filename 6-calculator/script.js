@@ -9,13 +9,13 @@ function operate() {
   rhs = Number(rhs);
   switch (operator) {
     case "add":
-      return add(lhs, rhs);
+      return lhs = add(lhs, rhs);
     case "subtract":
-      return subtract(lhs, rhs);
+      return lhs = subtract(lhs, rhs);
     case "multiply":
-      return multiply(lhs, rhs);
+      return lhs = multiply(lhs, rhs);
     case "divide":
-      return divide(lhs, rhs);
+      return lhs = divide(lhs, rhs);
     case "":
       return;
     default:
@@ -49,6 +49,9 @@ function handleClick(event) {
       case "evaluate":
         rhs = displayText.slice(operatorIndex + 1);
         display(operate());
+        rhs = "";
+        operator = "";
+        operatorIndex = null;
         break;
       case "decimal":
         console.log("dotted");
@@ -64,7 +67,7 @@ function display(text) {
 function appendToDisplay(text) {
   if (["÷", "×", "−", "+"].includes(text)) {
     lhs = displayText;
-    operatorIndex = displayText.length;
+    operatorIndex = displayText.toString().length;
   }
   displayText += text;
   display(displayText);
