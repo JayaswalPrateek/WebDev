@@ -1,5 +1,6 @@
 "use strict";
-let displayText = "", lhs, operator, operatorIndex, operatorSelected = false, rhs;
+let displayText = "", lhs, rhs;
+let operator, operatorIndex, operatorSelected = false;
 const add = (x, y) => x + y;
 const subtract = (x, y) => x - y;
 const multiply = (x, y) => x * y;
@@ -15,6 +16,10 @@ function operate() {
     case "multiply":
       return multiply(lhs, rhs);
     case "divide":
+      if (rhs === 0) {
+        logError("Can't Divide By 0");
+        return;
+      }
       return divide(lhs, rhs);
     case "":
       return;
@@ -66,6 +71,10 @@ function evaluate() {
   rhs = "";
   operator = "";
   operatorIndex = null;
+}
+
+function logError(err) {
+  container.querySelector("#error").innerHTML = err;
 }
 
 function display(text) {
