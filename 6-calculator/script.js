@@ -9,13 +9,13 @@ function operate() {
   rhs = Number(rhs);
   switch (operator) {
     case "add":
-      return lhs = add(lhs, rhs);
+      return add(lhs, rhs);
     case "subtract":
-      return lhs = subtract(lhs, rhs);
+      return subtract(lhs, rhs);
     case "multiply":
-      return lhs = multiply(lhs, rhs);
+      return multiply(lhs, rhs);
     case "divide":
-      return lhs = divide(lhs, rhs);
+      return divide(lhs, rhs);
     case "":
       return;
     default:
@@ -60,7 +60,8 @@ function handleClick(event) {
 function evaluate() {
   lhs = displayText.slice(0, operatorIndex);
   rhs = displayText.slice(operatorIndex + 1);
-  operate()
+  lhs = operate()
+  lhs = Number(lhs.toFixed(4))
   display(lhs);
   rhs = "";
   operator = "";
