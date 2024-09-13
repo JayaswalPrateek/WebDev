@@ -60,7 +60,6 @@ function handleClick(event) {
 function evaluate() {
   lhs = displayText.slice(0, operatorIndex);
   rhs = displayText.slice(operatorIndex + 1);
-  alert(`lhs is ${lhs}, operator is ${operator} and rhs is ${rhs}`)
   lhs = operate()
   display(lhs);
   rhs = "";
