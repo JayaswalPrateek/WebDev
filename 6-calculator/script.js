@@ -23,15 +23,15 @@ function operate(lhs, operator, rhs) {
 let container = document.getElementById("container");
 container.addEventListener("click", handleClick);
 function handleClick(event) {
-  console.log(event.target.id);
   if (!isNaN(event.target.id)) appendToDisplay(event.target.id);
   else
-    switch (event.target.type) {
+    switch (event.target.id) {
       case "clear":
         clearDisplay();
         break;
       case "backspace":
-        console.log("backspaced");
+        if (displayText === "") return;
+        display(displayText.slice(0, -1));
         break;
       case "divide":
         console.log("divided");
