@@ -6,6 +6,10 @@ const subtract = (x, y) => x - y;
 const multiply = (x, y) => x * y;
 const divide = (x, y) => x / y;
 function operate() {
+  if (lhs == "" || !operatorSelected || rhs == "") {
+    logError("Invalid Operation");
+    return lhs;
+  }
   let lhsNum = Number(lhs);
   let rhsNum = Number(rhs);
   switch (operator) {
@@ -66,7 +70,8 @@ function evaluate() {
   lhs = displayText.slice(0, operatorIndex);
   rhs = displayText.slice(operatorIndex + 1);
   lhs = operate()
-  lhs = Number(lhs.toFixed(4)).toString();
+  if (lhs != undefined && lhs != "")
+    lhs = Number(lhs).toFixed(4);
   display(lhs);
   rhs = "";
   operator = "";
