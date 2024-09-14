@@ -6,21 +6,21 @@ const subtract = (x, y) => x - y;
 const multiply = (x, y) => x * y;
 const divide = (x, y) => x / y;
 function operate() {
-  lhs = Number(lhs);
-  rhs = Number(rhs);
+  lhsNum = Number(lhs);
+  rhsNum = Number(rhs);
   switch (operator) {
     case "add":
-      return add(lhs, rhs);
+      return add(lhsNum, rhsNum);
     case "subtract":
-      return subtract(lhs, rhs);
+      return subtract(lhsNum, rhsNum);
     case "multiply":
-      return multiply(lhs, rhs);
+      return multiply(lhsNum, rhsNum);
     case "divide":
       if (rhs === 0) {
         logError("Can't Divide By 0");
         return;
       }
-      return divide(lhs, rhs);
+      return divide(lhsNum, rhsNum);
     case "":
       return;
     default:
@@ -66,7 +66,7 @@ function evaluate() {
   lhs = displayText.slice(0, operatorIndex);
   rhs = displayText.slice(operatorIndex + 1);
   lhs = operate()
-  lhs = Number(lhs.toFixed(4))
+  lhs = lhs.toFixed(4)
   display(lhs);
   rhs = "";
   operator = "";
