@@ -6,8 +6,8 @@ const subtract = (x, y) => x - y;
 const multiply = (x, y) => x * y;
 const divide = (x, y) => x / y;
 function operate() {
-  lhsNum = Number(lhs);
-  rhsNum = Number(rhs);
+  let lhsNum = Number(lhs);
+  let rhsNum = Number(rhs);
   switch (operator) {
     case "add":
       return add(lhsNum, rhsNum);
@@ -66,7 +66,7 @@ function evaluate() {
   lhs = displayText.slice(0, operatorIndex);
   rhs = displayText.slice(operatorIndex + 1);
   lhs = operate()
-  lhs = lhs.toFixed(4)
+  lhs = Number(lhs.toFixed(4)).toString();
   display(lhs);
   rhs = "";
   operator = "";
