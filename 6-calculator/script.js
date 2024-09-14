@@ -6,7 +6,7 @@ const subtract = (x, y) => x - y;
 const multiply = (x, y) => x * y;
 const divide = (x, y) => x / y;
 function operate() {
-  if (lhs == "" || !operatorSelected || rhs == "") {
+  if (lhs == "" || !operatorSelected || (rhs == "")) {
     logError("Invalid Operation");
     return lhs;
   }
@@ -77,6 +77,7 @@ function evaluate() {
   rhs = "";
   operator = "";
   operatorIndex = null;
+  operatorSelected = false;
 }
 
 function logError(err) {
