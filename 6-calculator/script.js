@@ -20,7 +20,7 @@ function operate() {
     case "multiply":
       return multiply(lhsNum, rhsNum);
     case "divide":
-      if (rhs === 0) {
+      if (rhsNum === 0) {
         logError("Can't Divide By 0");
         return;
       }
@@ -44,6 +44,7 @@ function handleClick(event) {
       case "backspace":
         if (displayText === "") return;
         display(displayText.slice(0, -1));
+        logError("");
         break;
       case "divide":
         appendToDisplay("÷", event);
@@ -71,7 +72,7 @@ function evaluate() {
   rhs = displayText.slice(operatorIndex + 1);
   lhs = operate()
   if (lhs != undefined && lhs != "")
-    lhs = Number(lhs).toFixed(4);
+    lhs = Number(Number(lhs).toFixed(4)).toString();
   display(lhs);
   rhs = "";
   operator = "";
@@ -103,4 +104,8 @@ function appendToDisplay(text, event) {
 
 function clearDisplay() {
   display("");
+  logError("");
+  lhs = rhs = displayText = operator = "";
+  operatorIndex = undefined;
+  operatorSelected = false;
 }
