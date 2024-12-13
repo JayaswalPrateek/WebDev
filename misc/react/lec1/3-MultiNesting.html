@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Multi Nesting</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module">
+        import React from "https://esm.sh/react?dev";
+        import ReactDOM from "https://esm.sh/react-dom/client?dev";
+
+        // const parent = React.createElement("div", { id: "parent" },
+        //     React.createElement("div", { id: "child" },
+        //         React.createElement("h1", { id: "heading" }, "Singly Nested Children")
+        //         TO ADD ANOTHER TAG ie CHILD HERE, GROUP ALL CHILDREN IN AN ARRAY
+        //      )
+        // )
+
+        const parent = React.createElement("div", { id: "parent" },
+            React.createElement("div", { id: "child" }, [
+                React.createElement("h1", { id: "heading1" }, "I'm a h1 sibling"),
+                React.createElement("h2", { id: "heading2" }, "I'm a h2 sibling"),
+            ])
+        )
+
+        // Suppose we need to create a sibling for child, the nesting can get confusing
+        // To solve this problem we use JSX
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(parent); // Error: Each child in a list should have a unique "key" prop.
+        console.log(parent);
+    </script>
+</body>
+
+</html>
