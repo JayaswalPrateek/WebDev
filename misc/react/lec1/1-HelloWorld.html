@@ -15,7 +15,10 @@
         import ReactDOM from "https://esm.sh/react-dom/client?dev";
         const heading = React.createElement("h1", { id: "heading" }, "Hello World");
         const root = ReactDOM.createRoot(document.getElementById("root"));
-        root.render(heading);
+        // things above the root wont be replaced and stay as it is
+        root.render(heading); // if h1 tag already in the root, its replaced after its loaded
+        // things below the root wont be replaced and stay as it is
+        // ie react will on work witing the boundaries of its root and not outside it
     </script>
 </body>
 
