@@ -11,7 +11,7 @@
     <meta name="author" content="Spoonful Inc.">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥄</text></svg>">
-    <script src="App.js" defer></script>
+    <script type="module" src="App.js"></script>
 </head>
 
 <!--
@@ -34,35 +34,7 @@
 -->
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <h1>Main content of the page</h1>
-        </section>
-
-        <article>
-            <h2>Self-Contained/Standalone content</h2>
-        </article>
-
-        <aside>
-            <h3>Anything indirectly related to main content</h3>
-        </aside>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Your Website. All rights reserved.</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </footer>
+    <div id="root"></div>
 </body>
 
 </html>
