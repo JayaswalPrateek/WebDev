@@ -8,6 +8,7 @@ import ReactDOM from "react-dom/client";
 //     ])
 // )
 
+// JSX stands for JavaScript XML
 // creating the same react element using JSX syntax instead of createElement():
 const parent = (
     <div id="parent">
@@ -26,8 +27,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(parent); // Error: Each child in a list should have a unique "key" prop.
 
 // some JSX attributes are different than their HTML counterparts
-// sometime its camelcased but sometimes its more than that
+// sometime its camelcased(no hyphens) but sometimes its more than that
 // like class in HTML is className in JSX
+// A functional component in react is a method that returns JSX
+// must have first letter capital to differentiate itself
 const HeadingReactFunctionalComponent = () => (
     <div id="container">
         <h1 className="heading">This is a Functional React Component</h1>
@@ -84,3 +87,15 @@ root4.render(<FunctComp />); // <FunctComp /> is same as <FunctComp></FunctComp>
  * cookies and tokens for other sites or something even worse than
  * that. Fortunately JSX will sanitize inputs and escape such code
  */
+
+/**
+ * Permuations:
+ * JSX in variables:	const jsx = <div />;
+ * Expressions in {}:	<div>{expression}</div>
+ * Component composition:	<Parent><Child /></Parent>
+ * Component methods:	<div>{ComponentMethod()}</div> same as <div><ComponentMethod/></div>
+ * Event handlers:	<button onClick={() => doSomething()}>Click</button>
+ * Props:	<Component propName={value} />
+ * Conditional rendering:	{condition ? <True /> : <False />} or {condition && <RenderIfTrue />}
+ * Iterating over arrays	{array.map(item => <Element key={id} />)}
+*/
