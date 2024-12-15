@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 
 const AppHeader = () => (
     <header id="appHeader">
-        <div id="logo">🥄 Spoonful</div>
-        <nav id="navContainer">
+        <div id="logo" className="jua-regular">🥣 Spoonful</div>
+        <nav id="navContainer" className="inter-bold">
             <ul id="navItems">
                 <li>Home</li>
                 <li>About Us</li>
