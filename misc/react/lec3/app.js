@@ -98,4 +98,15 @@ root4.render(<FunctComp />); // <FunctComp /> is same as <FunctComp></FunctComp>
  * Props:	<Component propName={value} />
  * Conditional rendering:	{condition ? <True /> : <False />} or {condition && <RenderIfTrue />}
  * Iterating over arrays	{array.map(item => <Element key={id} />)}
+ * For inline styling: use js object instead of a string:
+function App() {
+  return <div style={{ color: "blue", fontSize: "20px" }}>This is inline styled text!</div>;
+}
+or
+function App() {
+  const style = { color: "purple", marginTop: "20px" };
+  return <div className="my-class" style={style}>Styled with both class and inline styles!</div>;
+}
+
+
 */
