@@ -32,6 +32,19 @@ const HeadingReactFunctionalComponent = () => (
     <div id="container">
         <h1 className="heading">This is a Functonal React Component</h1>
     </div>
-);
+); // explicitly return JSX if not using anonymous shorthand methods
 const root2 = ReactDOM.createRoot(document.getElementById("root2"));
 root2.render(<HeadingReactFunctionalComponent />);
+
+// Component Composition:
+// nesting a functional react component inside another one:
+const OuterReactFunctionalComponent = () => (
+    <div id="outer">
+        <h2>Start of outer functional react component</h2>
+        <HeadingReactFunctionalComponent />
+        <h2>End of outer functional react component</h2>
+    </div>
+)
+
+const root3 = ReactDOM.createRoot(document.getElementById("root3"));
+root3.render(<OuterReactFunctionalComponent />);
