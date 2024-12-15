@@ -32,3 +32,32 @@
   font-weight: 600;
   font-style: normal;
 }
+
+#searchContainer {
+  padding: 10px;
+}
+
+#cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 10px;
+  width: 200px;
+  height: 420px;
+  background-color: lightgrey;
+}
+
+.card:hover {
+  cursor: pointer;
+  border: 2px solid grey;
+}
+
+.cardImage {
+  width: 100%;
+}
+
+.cardInfo {
+  text-align: center;
+}

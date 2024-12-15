@@ -15,10 +15,27 @@ const AppHeader = () => (
     </header>
 );
 
+const Card = () => (
+    <div className="card">
+        <img className="cardImage" alt="La Pino'z Pizza" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f44bc9708c514cd2dd6ae0d8b4677214"></img>
+        <div className="cardInfo">
+            <h3>La Pino'z Pizza</h3>
+            <h4><i>Italian</i></h4>
+            <h4>30 mins</h4>
+            <h4>4 ★</h4>
+        </div>
+    </div>
+);
+
 const AppMain = () => (
     <main id="appMain">
-
-    </main>
+        <section id="searchContainer">
+            Search
+        </section>
+        <section id="cardContainer">
+            <Card />
+        </section>
+    </main >
 );
 
 const AppFooter = () => (
