@@ -68,6 +68,19 @@ const FunctComp = () => (
         <PlaceholderFuncComp />
     </div>
 );
+// you can also call a functional component as a function inside {}
+// <PlaceholderFuncComp /> is same as {PlaceholderFuncComp()}
+
 
 const root4 = ReactDOM.createRoot(document.getElementById("root4"));
-root4.render(<FunctComp />);
+root4.render(<FunctComp />); // <FunctComp /> is same as <FunctComp></FunctComp> so both are legal
+
+/**
+ * Cross Site Scripting Attack due to Expression Embedding in JSX:
+ * suppose the jsx embeds whatever javascript is returned by a 3rd
+ * party methods(could be a library, API, etc anything that is not
+ * in our control) then any javascript code that is returned will
+ * be executed inside jsx's {} which could be malacious and steal
+ * cookies and tokens for other sites or something even worse than
+ * that. Fortunately JSX will sanitize inputs and escape such code
+ */
