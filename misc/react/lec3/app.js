@@ -30,7 +30,7 @@ root.render(parent); // Error: Each child in a list should have a unique "key" p
 // like class in HTML is className in JSX
 const HeadingReactFunctionalComponent = () => (
     <div id="container">
-        <h1 className="heading">This is a Functonal React Component</h1>
+        <h1 className="heading">This is a Functional React Component</h1>
     </div>
 ); // explicitly return JSX if not using anonymous shorthand methods
 const root2 = ReactDOM.createRoot(document.getElementById("root2"));
@@ -44,7 +44,30 @@ const OuterReactFunctionalComponent = () => (
         <HeadingReactFunctionalComponent />
         <h2>End of outer functional react component</h2>
     </div>
-)
+);
 
 const root3 = ReactDOM.createRoot(document.getElementById("root3"));
 root3.render(<OuterReactFunctionalComponent />);
+
+// Expression Embedding in JSX:
+// accessing js variables inside JSX within {}
+// then they will be displayed as it is
+// any evaluations, console.log() etc can be done
+const foo = "bar baz 123";
+// a simple jsx(not functional component) stored in a variable can
+// be displayed by referencing it from within {}
+const placeholderJSX = <h1 className="">THIS IS A PLACEHOLDER</h1>
+const PlaceholderFuncComp = () => placeholderJSX;
+const FunctComp = () => (
+    <div>
+        <h1>Hello World</h1>
+        <h2>{foo}</h2>
+        {foo + " 456"}
+        {placeholderJSX}
+        <h1>Bye World</h1>
+        <PlaceholderFuncComp />
+    </div>
+);
+
+const root4 = ReactDOM.createRoot(document.getElementById("root4"));
+root4.render(<FunctComp />);
