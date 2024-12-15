@@ -108,5 +108,12 @@ function App() {
   return <div className="my-class" style={style}>Styled with both class and inline styles!</div>;
 }
 
-
+// Lec 4:
+// React props are args passed to functional react components(that are simply methods returning JSX)
+// they improve the reusablility of a component while still allowing them to be slightly unique
+// no parenthesis or commas, used directly inside the tag itself:
+// Usage: <ReactFunctionalComponentRef propName="foo" anotherPropName="bar"/>
+// To access these props that are being passed, explicitly accept a props object from the
+// anonymous function's signature and then prop values inside it are used within {}
+// Pass a string inside quotes or a js object inside {} as props
 */
