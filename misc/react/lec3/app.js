@@ -9,12 +9,13 @@ import ReactDOM from "react-dom/client";
 // )
 
 // creating the same react element using JSX syntax instead of createElement():
-const parent = <div id="parent">
+const parent = (<div id="parent">
     <div id="child">
         <h1 id="heading1">I'm a h1 sibling</h1>
         <h2 id="heading2">I'm a h2 sibling</h2>
     </div>
 </div>
+);
 // creates the same react element as React.createElement() did,
 // but it looks much cleaner than it especially as nesting increases.
 // JSX is not a part of ecmascript spec so parcel bundler transpiles it.
