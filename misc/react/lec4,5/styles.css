@@ -37,6 +37,11 @@
   padding: 10px;
 }
 
+#filterButton {
+  margin: 10px;
+  cursor: pointer;
+}
+
 #cardContainer {
   display: flex;
   flex-wrap: wrap;
