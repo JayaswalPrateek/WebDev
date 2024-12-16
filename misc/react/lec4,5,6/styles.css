@@ -42,12 +42,14 @@
   cursor: pointer;
 }
 
-#cardContainer {
+#cardContainer,
+#shimmerContainer {
   display: flex;
   flex-wrap: wrap;
 }
 
-.card {
+.card,
+.shimmerCard {
   margin: 10px;
   width: 200px;
   background-color: lightgrey;
@@ -64,4 +66,8 @@
 
 .cardInfo {
   text-align: center;
+}
+
+.shimmerCard {
+  height: 300px;
 }

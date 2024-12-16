@@ -2,6 +2,7 @@ import Card from "./Card";
 // import CardDataList from "../utils/mockData"; // behaves as a const
 // all hooks are provided by React and not ReactDOM can to import them:
 import { useState, useEffect } from "react"; // we need to do a named import
+import ShimmerUI from "./ShimmerUI";
 
 const AppMain = () => {
     // let filteredCardDataList = CardDataList; // is a normal variable and not tied to the UI
@@ -43,11 +44,15 @@ const AppMain = () => {
         setStatefulCardDataListFn(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
     }
 
-    if (statefulCardDataList.length === 0) return <h1>Loading...</h1>
+    // Conditional Rendering:
+    // if (statefulCardDataList.length === 0) return <h1>Loading...</h1>
     // This is not a good approach as the content jumps on the user's screen
     // instead of fitting in place. Shimmer UI solves this by showing
     // greyed out placeholders in places where we are expecting to render
     // after getting the response from the fetch API
+    // Using Shimmer UI:
+    if (statefulCardDataList.length === 0) return <ShimmerUI />
+
 
     return (
         <main id="appMain">
