@@ -16,8 +16,23 @@ const AppMain = () => {
     // method returned by useState(). So to create a state variable with a initial defualt value:
     // let [statefulVar, setStatefulVarFunc] = useState(<default value of the state variable>):
     // let [statefulCardDataList, setStatefulCardDataListFn] = useState(CardDataList);
-    let [statefulCardDataList, setStatefulCardDataListFn] = useState([]);
+    const [statefulCardDataList, setStatefulCardDataListFn] = useState([]);
     // then continue to use it as a normal variable, behind the scenes its tied to the UI
+    // so whenever the variable is updated, the UI displaying the variable gets rerendered too
+    // is a reconsoliation cycle is triggered every time state variable changes
+
+    const [statefulFilteredCardDataList, setStatefulFilteredCardDataListFn] = useState();
+    // is for search feature and not filter feature. If we filter and update the original list
+    // then we lose the remaining data forever preventing future searches on the orginial list
+    // so the original list stays intact throughout the code and this list is updated and
+    // displayed throuhout the program and initially it mirrors the original list but later
+    // it uses the original list to keep updating itself and we use this list to render cards
+
+
+    const [searchBoxInputText, setSearchBoxInputText] = useState("");
+    // how are they changing when they are const?
+    // Ans: They are changed when the component is rerendered so they ar reassigned and not modified
+
 
     /**
      * 2 approaches to load a website whose content is fetched from an API Call:
@@ -42,6 +57,7 @@ const AppMain = () => {
         const json = await data.json();
         console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
         setStatefulCardDataListFn(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        setStatefulFilteredCardDataListFn(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
     }
 
     // Conditional Rendering:
@@ -53,20 +69,26 @@ const AppMain = () => {
     // Using Shimmer UI:
     if (statefulCardDataList.length === 0) return <ShimmerUI />
 
-
     return (
         <main id="appMain">
             <section id="searchContainer">
-                Search
-            </section>
-            <section id="filterContainer">
-                <button id='filterButton' onClick={() => {
-                    // filteredCardDataList = CardDataList.filter(card => card.info.avgRating >= 4.5)
-                    setStatefulCardDataListFn(statefulCardDataList.filter(card => card.info.avgRating >= 4.5))
-                    // whenever a state variable is updated, the component associated to it is re rendered
-                }}>
-                    Top Rated(4.5★ or more)
-                </button>
+                {/* here every onChange event triggers reconsoliation cycle on the entire body */}
+                {/* but only the input box is rerendered as its the only diff between the 2 virtual DOMs */}
+                {/* Its updating the value attribute of the input box in every reconsoliation cycle */}
+                <input type="text" className="searchBox" value={searchBoxInputText} onChange={(e) => setSearchBoxInputText(e.target.value)} />
+                <button onClick={() => {
+                    console.log(searchBoxInputText);
+                    setStatefulFilteredCardDataListFn(statefulCardDataList.filter(card => card.info.name.toLowerCase().includes(searchBoxInputText.toLowerCase())));
+                }}>Search</button>
+                <section id="filterContainer">
+                    <button id='filterButton' onClick={() => {
+                        // filteredCardDataList = CardDataList.filter(card => card.info.avgRating >= 4.5)
+                        setStatefulFilteredCardDataListFn(statefulCardDataList.filter(card => card.info.avgRating >= 4.5))
+                        // whenever a state variable is updated, the component associated to it is re rendered
+                    }}>
+                        Top Rated(4.5★ or more)
+                    </button>
+                </section>
             </section>
             <section id="cardContainer">
                 {/* <Card
@@ -75,7 +97,7 @@ const AppMain = () => {
             /> */}
                 {/* <Card CardData={CardDataList[1]} /> */}
                 {
-                    statefulCardDataList.map(entry => <Card key={entry.info.id} CardData={entry} />)
+                    statefulFilteredCardDataList.map(entry => <Card key={entry.info.id} CardData={entry} />)
                 }
             </section>
         </main >
