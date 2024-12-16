@@ -53,7 +53,7 @@ const AppMain = () => {
     // so we will fetch the data to be displayed within the body of this callback function
     useEffect(() => { fetchData() }, [])
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2108683&lng=72.9608202&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch("https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2108683&lng=72.9608202&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
         console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
         setStatefulCardDataListFn(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
