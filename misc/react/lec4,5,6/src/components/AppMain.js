@@ -43,6 +43,12 @@ const AppMain = () => {
         setStatefulCardDataListFn(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
     }
 
+    if (statefulCardDataList.length === 0) return <h1>Loading...</h1>
+    // This is not a good approach as the content jumps on the user's screen
+    // instead of fitting in place. Shimmer UI solves this by showing
+    // greyed out placeholders in places where we are expecting to render
+    // after getting the response from the fetch API
+
     return (
         <main id="appMain">
             <section id="searchContainer">
