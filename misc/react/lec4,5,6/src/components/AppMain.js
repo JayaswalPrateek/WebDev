@@ -1,7 +1,7 @@
 import Card from "./Card";
-import CardDataList from "../utils/mockData"; // behaves as a const
+// import CardDataList from "../utils/mockData"; // behaves as a const
 // all hooks are provided by React and not ReactDOM can to import them:
-import { useState } from "react"; // we need to do a named import
+import { useState, useEffect } from "react"; // we need to do a named import
 
 const AppMain = () => {
     // let filteredCardDataList = CardDataList; // is a normal variable and not tied to the UI
@@ -14,8 +14,35 @@ const AppMain = () => {
     // a state variable cant be modified with a simple assignment operator, use a
     // method returned by useState(). So to create a state variable with a initial defualt value:
     // let [statefulVar, setStatefulVarFunc] = useState(<default value of the state variable>):
-    let [statefulCardDataList, setStatefulCardDataListFn] = useState(CardDataList);
+    // let [statefulCardDataList, setStatefulCardDataListFn] = useState(CardDataList);
+    let [statefulCardDataList, setStatefulCardDataListFn] = useState([]);
     // then continue to use it as a normal variable, behind the scenes its tied to the UI
+
+    /**
+     * 2 approaches to load a website whose content is fetched from an API Call:
+     * 1. Load the website -> Call the API -> Render the UI with the data from the API
+     *      Pros: No redundant rendering cycles needed
+     *      Cons: Untill the API call is successful, we see a blank white screen
+     * 2. Load the website -> Render wireframe -> Call the API -> Populate the wireframe
+     *      Pros: User doesnt see a blank white screen till the API sends a result
+     *      Cons: One extra rendering cycle needed thats wasteful as its overwritten after the API responds
+     *                  - Technically not too bad/wasteful as react is very efficient + Better UX too
+     * So with React, prefer 2 over 1 and to achieve 2 use need to use another hook called useEffect()
+     * useEffect() react hook takes in a callback method and a dependency list
+     */
+
+    // useEffect(() => { console.log("USE EFFECT CALLED"); }, [statefulCardDataList]);
+    // the callback function is executed when the component is rendered for the first time
+    // as soon as the first render is finished the callback function is called
+    // so we will fetch the data to be displayed within the body of this callback function
+    useEffect(() => { fetchData() }, [])
+    const fetchData = async () => {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2108683&lng=72.9608202&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const json = await data.json();
+        console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        setStatefulCardDataListFn(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+    }
+
     return (
         <main id="appMain">
             <section id="searchContainer">
