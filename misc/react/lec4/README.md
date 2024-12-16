@@ -1,0 +1,23 @@
+# Spoonful
+
+- Header
+    - Logo
+    - Navigation Bar
+        - Nav Items
+- Body
+    - Search Bar
+        - Search Input
+        - Search Icon
+    - Card Container
+        - Card
+            - Image
+            - Name
+            - Cuisine
+            - Rating
+            - Time
+- Footer
+    - Copyright
+    - Links
+    - About Us
+        - Address
+        - Contact Us
