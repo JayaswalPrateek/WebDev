@@ -33,6 +33,9 @@ const AppMain = () => {
     // how are they changing when they are const?
     // Ans: They are changed when the component is rerendered so they ar reassigned and not modified
 
+    // never create state variables outside of a component
+    // good practice to create them at the top withing a component
+    // never create them inside a if else conditional, for loops, functions nested inside component
 
     /**
      * 2 approaches to load a website whose content is fetched from an API Call:
@@ -48,9 +51,14 @@ const AppMain = () => {
      */
 
     // useEffect(() => { console.log("USE EFFECT CALLED"); }, [statefulCardDataList]);
-    // the callback function is executed when the component is rendered for the first time
-    // as soon as the first render is finished the callback function is called
+    // the callback function is executed every time the component rendering is done
     // so we will fetch the data to be displayed within the body of this callback function
+    // specifying the callback function is mandatory but specifying the dependency array is optional
+    // if the dependency array is not specified, the default behaviour is that the callback function
+    // is called every time the component is rendered. If an empty dependency array is specified then
+    // the callback method is only called once for the first render. If the dependency array contains
+    // state variables or props, then the callback methods is called whenever eny one of these
+    // dependency changes their values. Will still be called after the initial render.
     useEffect(() => { fetchData() }, [])
     const fetchData = async () => {
         const data = await fetch("https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2108683&lng=72.9608202&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
