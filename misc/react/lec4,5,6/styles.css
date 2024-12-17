@@ -9,8 +9,10 @@
   font-size: 75px;
 }
 
+#navContainer,
 #navItems {
   display: flex;
+  align-items: center;
 }
 
 #navItems > li {
@@ -18,6 +20,15 @@
   margin: 15px;
   font-size: 25px;
   list-style-type: none;
+}
+
+#loginButton {
+  height: 30px;
+  margin: 25px;
+  font-size: 25px;
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
 }
 
 .jua-regular {
