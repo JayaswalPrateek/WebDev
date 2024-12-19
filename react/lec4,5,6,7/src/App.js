@@ -58,7 +58,7 @@ const appRouter = createBrowserRouter([{
             path: "/about",
             element: <AboutUS />,
         }, {
-            path: "contactUs",
+            path: "contact",
             element: <ContactUs />,
         }],
     errorElement: <SmthWentWrong />,
