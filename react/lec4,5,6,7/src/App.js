@@ -6,6 +6,7 @@ import AppFooter from "./components/AppFooter";
 import AboutUS from "./components/AboutUs";
 import ContactUs from "./components/ContactUS";
 import SmthWentWrong from "./components/SmthWentWrong";
+import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -58,8 +59,13 @@ const appRouter = createBrowserRouter([{
             path: "/about",
             element: <AboutUS />,
         }, {
-            path: "contact",
+            path: "/contact",
             element: <ContactUs />,
+        }, {
+            path: "/restaurant/:restaurantID", // makes this a dynamic route
+            // so depending upon the specified name of the restaurant, we
+            // make sure to load the menu specific to that restaurant.
+            element: <RestaurantMenu />
         }],
     errorElement: <SmthWentWrong />,
 }
