@@ -3,6 +3,7 @@ import Card from "./Card";
 // all hooks are provided by React and not ReactDOM can to import them:
 import { useState, useEffect } from "react"; // we need to do a named import
 import ShimmerUI from "./ShimmerUI";
+import { Link } from "react-router"; // so that clicking on cards takes us to the menu
 
 const AppMain = () => {
     // let filteredCardDataList = CardDataList; // is a normal variable and not tied to the UI
@@ -105,8 +106,11 @@ const AppMain = () => {
             /> */}
                 {/* <Card CardData={CardDataList[1]} /> */}
                 {
-                    statefulFilteredCardDataList.map(entry => <Card key={entry.info.id} CardData={entry} />)
-                }
+                    // key should be on the outer most element so here its on Link instead of Card
+                    statefulFilteredCardDataList.map(entry => <Link to={"/restaurant/" + entry.info.id} key={entry.info.id}>
+                        <Card CardData={entry} />
+                    </Link>
+                    )}
             </section>
         </main >
     )

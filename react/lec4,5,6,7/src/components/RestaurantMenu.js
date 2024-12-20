@@ -1,12 +1,16 @@
+// This should be a reusable dynamic component that is unique to each and every restaurant
 import { useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
+import { useParams } from "react-router"; // allows us to get a restaurant id from the route and use it to call the api
+// and show the data that is specific to that restaurant
+import { MENU_API } from "../utils/constants";
 
-// This should be a reusable dynamic component that is unique to each and every restaurant
 const RestaurantMenu = () => {
     const [statefulRestaurantInfo, setStatefulRestaurantInfo] = useState(null)
+    const { restaurantID } = useParams()
 
     const fetchRestaurantData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.2108683&lng=72.9608202&restaurantId=554508");
+        const data = await fetch(MENU_API + restaurantID);
         const json = await data.json();
         console.log(json); // To present the data on the UI we need to sync the data layer with the UI layer using state variables
         setStatefulRestaurantInfo(json);
