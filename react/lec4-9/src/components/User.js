@@ -94,7 +94,7 @@ class User extends React.Component {
      *              - calls componentDidUnmount method(if defined)
      *                  - called when the component is about to be removed
      *                      - like when going to another route/page
-     *                  - useful for clearing setInterval()
+     *                  - useful for clearing setInterval()/event listeners
      *                      - if not removed, every time a component is rendered,
      *                        a new setInterval() is started without removing the
      *                        previous one, reressing the performance.
