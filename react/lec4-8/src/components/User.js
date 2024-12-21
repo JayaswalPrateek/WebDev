@@ -16,10 +16,14 @@
 import React from "react";
 
 class User extends React.Component {
+    constructor(props) { // needed for passing props to a class based react component
+        super(props); // needed for passing the props to the parent class React.Component
+    }
+
     render() {
         return (
             <div id="userCard">
-                <h2>Name: foo</h2>
+                <h2>Name: {this.props.name}</h2>
                 <h3>Location: bar</h3>
                 <h4>Contact: baz</h4>
             </div>
