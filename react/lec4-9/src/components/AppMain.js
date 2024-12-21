@@ -63,6 +63,14 @@ const AppMain = () => {
     // When we don't provide a dependency array, the effect is considered to have an
     // empty dependency array, which is equivalent to specifying every value as a dependency.
     useEffect(() => { fetchData() }, [])
+    // useEffect(async () => {...}, []) is illegal, instead:
+    // useEffect(() => {
+    //     const fn = async () => {...};
+    //     fn();
+    //     return () => {
+    //         // Cleanup Code
+    //     }
+    // }, []);
     const fetchData = async () => {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.2108683&lng=72.9608202&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
