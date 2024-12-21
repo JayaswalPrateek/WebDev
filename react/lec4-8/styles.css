@@ -83,3 +83,8 @@
 .shimmerCard {
   height: 300px;
 }
+
+#userCard {
+  padding: 10px;
+  border: 1px solid black;
+}
