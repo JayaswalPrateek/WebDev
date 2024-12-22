@@ -4,6 +4,7 @@ import Card from "./Card";
 import { useState, useEffect } from "react"; // we need to do a named import
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router"; // so that clicking on cards takes us to the menu
+import useNetworkStatus from "./../utils/useNetworkStatus"; // custom hook
 
 const AppMain = () => {
     // let filteredCardDataList = CardDataList; // is a normal variable and not tied to the UI
@@ -78,6 +79,14 @@ const AppMain = () => {
         setStatefulCardDataListFn(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
         setStatefulFilteredCardDataListFn(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
     }
+
+    const networkStatus = useNetworkStatus();
+    if (!networkStatus) return (
+        <div id="disconnectedMessageContainer">
+            <h1>Looks like you are offline</h1>
+            <h2>Please check your internet connection</h2>
+        </div>
+    );
 
     // Conditional Rendering:
     // if (statefulCardDataList.length === 0) return <h1>Loading...</h1>
