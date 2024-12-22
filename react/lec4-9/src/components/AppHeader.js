@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import useNetworkStatus from "../utils/useNetworkStatus";
 // using <a href='/about'></a> for routing rerenders the entire page
 // to avoid this, react-router provides Link to efficiently route to
 // other pages by clicking on html elements without using <a href></a>
@@ -22,6 +23,7 @@ import { Link } from "react-router";
 
 const AppHeader = () => {
     const [loginButtonText, setLoginButtonText] = useState("Login")
+    const networkStatus = useNetworkStatus();
     return (
         <header id="appHeader">
             <div id="logo" className="jua-regular">🥣 Spoonful</div>
@@ -35,6 +37,7 @@ const AppHeader = () => {
                 <button id="loginButton" className="inter-bold" onClick={() => setLoginButtonText(loginButtonText == 'Login' ? 'Log Out' : 'Login')}>
                     {loginButtonText}
                 </button>
+                <div id="networkStatus">{networkStatus ? "🟢" : "🔴"}</div>
             </nav>
         </header>
     )
