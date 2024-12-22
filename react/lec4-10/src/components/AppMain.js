@@ -99,26 +99,28 @@ const AppMain = () => {
 
     return (
         <main id="appMain">
-            <section id="searchContainer">
+            <section id="searchContainer" className="p-[10px] flex">
                 {/* here every onChange event triggers reconsoliation cycle on the entire body */}
                 {/* but only the input box is rerendered as its the only diff between the 2 virtual DOMs */}
                 {/* Its updating the value attribute of the input box in every reconsoliation cycle */}
                 <input type="text" className="searchBox" value={searchBoxInputText} onChange={(e) => setSearchBoxInputText(e.target.value)} />
-                <button onClick={() => {
-                    console.log(searchBoxInputText);
-                    setStatefulFilteredCardDataListFn(statefulCardDataList.filter(card => card.info.name.toLowerCase().includes(searchBoxInputText.toLowerCase())));
-                }}>Search</button>
+                <button
+                    onClick={() => {
+                        console.log(searchBoxInputText);
+                        setStatefulFilteredCardDataListFn(statefulCardDataList.filter(card => card.info.name.toLowerCase().includes(searchBoxInputText.toLowerCase())));
+                    }}>Search</button>
                 <section id="filterContainer">
-                    <button id='filterButton' onClick={() => {
-                        // filteredCardDataList = CardDataList.filter(card => card.info.avgRating >= 4.5)
-                        setStatefulFilteredCardDataListFn(statefulCardDataList.filter(card => card.info.avgRating >= 4.5))
-                        // whenever a state variable is updated, the component associated to it is re rendered
-                    }}>
+                    <button id='filterButton' className="m-[10px] cursor-pointer"
+                        onClick={() => {
+                            // filteredCardDataList = CardDataList.filter(card => card.info.avgRating >= 4.5)
+                            setStatefulFilteredCardDataListFn(statefulCardDataList.filter(card => card.info.avgRating >= 4.5))
+                            // whenever a state variable is updated, the component associated to it is re rendered
+                        }}>
                         Top Rated(4.5★ or more)
                     </button>
                 </section>
             </section>
-            <section id="cardContainer">
+            <section id="cardContainer" className="flex flex-wrap">
                 {/* <Card
             // cardName="La Pino'z Pizza" cardCuisine="Italian" cardETA="30" cardRating="4"
             // cardImageSrc="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f44bc9708c514cd2dd6ae0d8b4677214"

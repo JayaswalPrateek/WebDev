@@ -48,7 +48,7 @@ class User extends React.Component {
 
     render() {
         return (
-            <div id="userCard">
+            <div id="userCard" className="p-[10px] border-[1px] border-[solid] border-[black]">
                 <img src={this.state.userInfo?.avatar_url} width="100px"></img>
                 <h2>Name: {this.state.userInfo?.name}</h2>
                 <h5>Count: {this.state.count}</h5>

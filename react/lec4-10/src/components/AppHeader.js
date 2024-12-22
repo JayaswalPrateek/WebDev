@@ -25,16 +25,17 @@ const AppHeader = () => {
     const [loginButtonText, setLoginButtonText] = useState("Login")
     const networkStatus = useNetworkStatus();
     return (
-        <header id="appHeader">
-            <div id="logo" className="jua-regular">🥣 Spoonful</div>
-            <nav id="navContainer" className="inter-bold">
-                <ul id="navItems">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About Us</Link></li>
-                    <li><Link to="contact">Contact Us</Link></li>
-                    <li>Cart</li>
+        <header id="appHeader" className="flex justify-between items-center px-[20px] py-0">
+            <div id="logo" className="font-['Jua',_sans-serif] font-normal not-italic text-[75px]">🥣 Spoonful</div>
+            <nav id="navContainer" className="font-['Inter',_sans-serif] font-semibold not-italic flex items-center">
+                <ul id="navItems" className="flex items-center">
+                    <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="/">Home</Link></li>
+                    <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="/about">About Us</Link></li>
+                    <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="contact">Contact Us</Link></li>
+                    <li className="p-[15px] m-[15px] text-[25px] list-none">Cart</li>
                 </ul>
-                <button id="loginButton" className="inter-bold" onClick={() => setLoginButtonText(loginButtonText == 'Login' ? 'Log Out' : 'Login')}>
+                <button id="loginButton" className="font-['Inter',_sans-serif] font-semibold not-italic h-[30px] m-[25px] text-[25px] cursor-pointer border-[none] [background-color:inherit]"
+                    onClick={() => setLoginButtonText(loginButtonText == 'Login' ? 'Log Out' : 'Login')}>
                     {loginButtonText}
                 </button>
                 <div id="networkStatus">{networkStatus ? "🟢" : "🔴"}</div>
