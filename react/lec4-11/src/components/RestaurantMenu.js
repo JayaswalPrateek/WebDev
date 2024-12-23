@@ -29,7 +29,10 @@ const RestaurantMenu = () => {
     const { name, costForTwo, cuisines, avgRating } = statefulRestaurantData.data.cards[2].card.card.info;
     const deliveryTime = statefulRestaurantData.data.cards[2].card.card.info.sla.slaString;
     const menu = statefulRestaurantData.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards;
-    console.log(menu)
+    const fullMenu = statefulRestaurantData.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards.filter(card => (
+        card.card.card['@type'] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    ))
+    console.log(fullMenu)
     return (
         <section id="restaurantMenu">
             <h1>{name}</h1>
