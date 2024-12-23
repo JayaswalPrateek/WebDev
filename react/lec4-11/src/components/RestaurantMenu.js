@@ -5,6 +5,7 @@ import { useParams } from "react-router"; // allows us to get a restaurant id fr
 // and show the data that is specific to that restaurant
 // import { MENU_API } from "../utils/constants"; Not Required coz abstracted by useRestaurantData
 import useRestaurantData from "../utils/useRestaurantData";
+import AccordionCategory from "./AccordionCategory";
 
 const RestaurantMenu = () => {
     // const [statefulRestaurantData, setStatefulRestaurantData] = useState(null) abstracted by useRestaurantData
@@ -34,24 +35,17 @@ const RestaurantMenu = () => {
     ))
     console.log(fullMenu)
     return (
-        <section id="restaurantMenu">
-            <h1>{name}</h1>
-            <h3>{cuisines.join(', ')}</h3>
-            <h3>₹{costForTwo / 100} for two</h3>
-            <h3>{deliveryTime}</h3>
-            <h3>{avgRating}★</h3>
-            <h3>Menu</h3>
-            <ul>
-                {menu.map((dish) => {
-                    const { id, name, defaultPrice, finalPrice, price } = dish.card.info;
-                    const displayPrice = (defaultPrice ?? finalPrice ?? price) / 100;
-                    return (
-                        <li key={id}>
-                            {name} @ ₹{displayPrice}
-                        </li>
-                    );
-                })}
-            </ul>
+        <section id="restaurantMenu" className="text-center">
+            <h1 className="font-bold my-6 text-2xl">{name}</h1>
+            <h3 className="font-bold text-lg">{cuisines.join(', ')}</h3>
+            <h3 className="font-bold text-lg">₹{costForTwo / 100} for two</h3>
+            <h3 className="font-bold text-lg">{deliveryTime}</h3>
+            <h3 className="font-bold text-lg">{avgRating}★</h3>
+            <div id="accordion">
+                {fullMenu.map((category) => (
+                    <AccordionCategory key={category.card.card.title} data={category.card.card} />
+                ))}
+            </div>
         </section>
     );
 };
