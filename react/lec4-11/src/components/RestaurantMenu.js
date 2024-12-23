@@ -39,11 +39,15 @@ const RestaurantMenu = () => {
             <h3>{avgRating}★</h3>
             <h3>Menu</h3>
             <ul>
-                {menu.map((dish) => (
-                    <li id={dish.card.info.id}>
-                        {dish.card.info.name} @ ₹{dish.card.info.defaultPrice / 100}
-                    </li>)
-                )}
+                {menu.map((dish) => {
+                    const { id, name, defaultPrice, finalPrice, price } = dish.card.info;
+                    const displayPrice = (defaultPrice ?? finalPrice ?? price) / 100;
+                    return (
+                        <li key={id}>
+                            {name} @ ₹{displayPrice}
+                        </li>
+                    );
+                })}
             </ul>
         </section>
     );
