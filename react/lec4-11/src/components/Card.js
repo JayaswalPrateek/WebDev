@@ -14,4 +14,20 @@ const Card = (props) => {
     )
 };
 
+// a higher order component accepts and returns a component
+//      - In between it enhances the input component
+//      - Pure Function coz input component itself isnt modified
+export const promotedCard = // promotedCard is a Higher Order Functional React Component:
+    (Card) => { // that accepts a Card Component
+        return (props) => { // and then creates and returns
+            return ( // functional component that will
+                <div>
+                    <Card {...props} /> {/* always contain <Card/> but will */}
+                    {/* conditionally render the 'Promoted' label if that restraunt is being promoted */}
+                    <label className="absolute bg-black text-white m-2 p-2 rounded-lg">Promoted</label>
+                </div>
+            )
+        }
+    };
+
 export default Card;

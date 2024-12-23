@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card, { promotedCard } from "./Card";
 // import CardDataList from "../utils/mockData"; // behaves as a const
 // all hooks are provided by React and not ReactDOM can to import them:
 import { useState, useEffect } from "react"; // we need to do a named import
@@ -88,6 +88,8 @@ const AppMain = () => {
         </div>
     );
 
+    const PromotedRestrauntCard = promotedCard(Card); // Higher Order Function(lec 11) returns a component
+
     // Conditional Rendering:
     // if (statefulCardDataList.length === 0) return <h1>Loading...</h1>
     // This is not a good approach as the content jumps on the user's screen
@@ -129,7 +131,17 @@ const AppMain = () => {
                 {
                     // key should be on the outer most element so here its on Link instead of Card
                     statefulFilteredCardDataList.map(entry => <Link to={"/restaurant/" + entry.info.id} key={entry.info.id}>
-                        <Card CardData={entry} />
+                        {/* Swiggy API no longer flags promoted restraunts in the json response
+                            So deciding it randomly. Cards for promoted restraunts are marked promoted
+                            Without duplicating the code, we can have a higher order component instead which
+                            embeds <Card CardData={entry} /> into itself and a promoted banner if its promoted
+                            and then returns component containing the embedded <Card CardData={entry} />
+                            such component are called enhancers.
+                        */}
+                        {/* instead of: <Card CardData={entry}/>, use a higher order component (lec 11) */}
+                        {
+                            Math.round(Math.random()) ? <PromotedRestrauntCard CardData={entry} /> : <Card CardData={entry} />
+                        }
                     </Link>
                     )}
             </section>
