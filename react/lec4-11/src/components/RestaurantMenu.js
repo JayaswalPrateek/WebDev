@@ -6,8 +6,11 @@ import { useParams } from "react-router"; // allows us to get a restaurant id fr
 // import { MENU_API } from "../utils/constants"; Not Required coz abstracted by useRestaurantData
 import useRestaurantData from "../utils/useRestaurantData";
 import AccordionCategory from "./AccordionCategory";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
+    const [expandedIndex, setExpandedIndex] = useState(0)
+
     // const [statefulRestaurantData, setStatefulRestaurantData] = useState(null) abstracted by useRestaurantData
     const { restaurantID } = useParams()
 
@@ -41,9 +44,14 @@ const RestaurantMenu = () => {
             <h3 className="font-bold text-lg">₹{costForTwo / 100} for two</h3>
             <h3 className="font-bold text-lg">{deliveryTime}</h3>
             <h3 className="font-bold text-lg">{avgRating}★</h3>
+            {/* passing showAccordianList and setExpandedIndex makes AccordionCategory a controlled component*/}
             <div id="accordion">
-                {fullMenu.map((category) => (
-                    <AccordionCategory key={category.card.card.title} data={category.card.card} />
+                {fullMenu.map((category, index) => (
+                    <AccordionCategory key={category.card.card.title}
+                        data={category.card.card}
+                        showAccordianList={index === expandedIndex ? true : false}
+                        setExpandedIndex={() => setExpandedIndex(index)}
+                    />
                 ))}
             </div>
         </section>
