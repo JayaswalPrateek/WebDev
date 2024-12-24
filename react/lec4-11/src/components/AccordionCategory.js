@@ -22,7 +22,7 @@ const AccordionCategory = (props) => {
      */
     return (
         <div id="accordionCategoryContainer">
-            <div id="accordionCategoryHeader" className="w-6/12 mx-auto my-4 bg-gray-100 shadow-lg p-4">
+            <div id="accordionCategoryHeader" className="w-6/12 mx-auto my-4 bg-[lightgrey] shadow-lg p-4">
                 <div className="flex justify-between cursor-pointer" onClick={() => {
                     // setShowAccordianList(!showAccordianList)
                     props.setExpandedIndex()

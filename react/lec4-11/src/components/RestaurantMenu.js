@@ -39,8 +39,8 @@ const RestaurantMenu = () => {
     console.log(fullMenu)
     return (
         <section id="restaurantMenu" className="text-center">
-            <h1 className="font-bold my-6 text-2xl">{name}</h1>
-            <h3 className="font-bold text-lg">{cuisines.join(', ')}</h3>
+            <h1 className="font-bold my-6 text-4xl">{name}</h1>
+            <h3 className="font-bold italic text-lg">{cuisines.join(', ')}</h3>
             <h3 className="font-bold text-lg">₹{costForTwo / 100} for two</h3>
             <h3 className="font-bold text-lg">{deliveryTime}</h3>
             <h3 className="font-bold text-lg">{avgRating}★</h3>
