@@ -1,21 +1,19 @@
 const ShimmerUI = () => (
-    <div id="shimmerContainer" className="flex flex-wrap">
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
-        <div className="shimmerCard m-[10px] w-[200px] bg-[lightgrey] h-[300px]"></div>
+    <div id="shimmerContainer" className="flex flex-wrap items-center">
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
+        <div className="rounded-lg gap-2 h-[400px] w-[200px] m-[20px] p-[20px] bg-[lightgrey]"></div>
     </div>
 );
 
