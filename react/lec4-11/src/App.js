@@ -9,6 +9,10 @@ import SmthWentWrong from "./components/SmthWentWrong";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 
+// lec 11:
+import { useState } from "react";
+import UserContext from "./utils/UserContext";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // const AppContainer = () => (
@@ -39,14 +43,21 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // the header and footer arent sticky across pages
 // to make them persis across pages we need to us children routes
 
-const AppContainer = () => (
-    <div id="appContainer">
-        <AppHeader /> {/* always visible */}
-        {/* Conditionally render children here based on the route */}
-        <Outlet /> { /* Just add this and it will take care of it */}
-        <AppFooter /> {/* always visible */}
-    </div >
-);
+const AppContainer = () => {
+    const [username, setUsername] = useState("");
+    return (
+        <UserContext.Provider value={{ loggedInUsername: username }}> {/* lec 11 */}
+            <div id="appContainer" className="flex flex-col flex-grow justify-between h-screen">
+                <div>
+                    <AppHeader username={username} setUsername={setUsername} /> {/* always visible */}
+                    {/* Conditionally render children here based on the route */}
+                    <Outlet /> { /* Just add this and it will take care of it */}
+                </div>
+                <AppFooter /> {/* always visible */}
+            </div >
+        </UserContext.Provider>
+    );
+}
 
 const appRouter = createBrowserRouter([{
     path: "/",

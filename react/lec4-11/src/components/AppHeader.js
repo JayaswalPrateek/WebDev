@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router";
 import useNetworkStatus from "../utils/useNetworkStatus";
 // using <a href='/about'></a> for routing rerenders the entire page
@@ -21,7 +21,7 @@ import useNetworkStatus from "../utils/useNetworkStatus";
  * while using the app even if we arent making api calls.
  */
 
-const AppHeader = () => {
+const AppHeader = (props) => {
     const [loginButtonText, setLoginButtonText] = useState("Login")
     const networkStatus = useNetworkStatus();
     return (
@@ -33,12 +33,29 @@ const AppHeader = () => {
                     <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="/about">About Us</Link></li>
                     <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="contact">Contact Us</Link></li>
                     <li className="p-[15px] m-[15px] text-[25px] list-none">Cart</li>
+                    <li className="p-[15px] m-[15px] text-[25px] list-none">
+                        <button id="loginButton" className="font-['Inter',_sans-serif] font-semibold not-italic h-[30px] text-[25px] cursor-pointer border-[none] [background-color:inherit]"
+                            onClick={() => {
+                                if (loginButtonText == 'Login') {
+                                    const username = prompt("Enter Username:");
+                                    if (username.length != 0) {
+                                        setLoginButtonText("Log Out(" + username + ")");
+                                        props.setUsername(username);
+                                    }
+                                    else alert("Please enter a valid username");
+                                } else {
+                                    setLoginButtonText("Login");
+                                    props.setUsername("");
+                                }
+                                // setLoginButtonText(loginButtonText == 'Login' ? 'Log Out:' + UserContextData.loggedInUsername : 'Login')
+                            }}>
+                            {loginButtonText}
+                        </button>
+                    </li>
+                    <li className="text-[25px] list-none">
+                        <div id="networkStatus">{networkStatus ? "🟢" : "🔴"}</div>
+                    </li>
                 </ul>
-                <button id="loginButton" className="font-['Inter',_sans-serif] font-semibold not-italic h-[30px] m-[25px] text-[25px] cursor-pointer border-[none] [background-color:inherit]"
-                    onClick={() => setLoginButtonText(loginButtonText == 'Login' ? 'Log Out' : 'Login')}>
-                    {loginButtonText}
-                </button>
-                <div id="networkStatus">{networkStatus ? "🟢" : "🔴"}</div>
             </nav>
         </header>
     )

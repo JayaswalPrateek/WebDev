@@ -1,10 +1,11 @@
 import Card, { promotedCard } from "./Card";
 // import CardDataList from "../utils/mockData"; // behaves as a const
 // all hooks are provided by React and not ReactDOM can to import them:
-import { useState, useEffect } from "react"; // we need to do a named import
+import { useState, useEffect, useContext } from "react"; // we need to do a named import
 import ShimmerUI from "./ShimmerUI";
 import { Link } from "react-router"; // so that clicking on cards takes us to the menu
 import useNetworkStatus from "./../utils/useNetworkStatus"; // custom hook
+import UserContext from "../utils/UserContext";
 
 const AppMain = () => {
     // let filteredCardDataList = CardDataList; // is a normal variable and not tied to the UI
@@ -90,6 +91,8 @@ const AppMain = () => {
 
     const PromotedRestrauntCard = promotedCard(Card); // Higher Order Function(lec 11) returns a component
 
+    const { loggedInUsername } = useContext(UserContext)
+
     // Conditional Rendering:
     // if (statefulCardDataList.length === 0) return <h1>Loading...</h1>
     // This is not a good approach as the content jumps on the user's screen
@@ -102,27 +105,35 @@ const AppMain = () => {
     return (
         <main id="appMain">
             <section id="searchContainer" className="p-[10px] flex">
+                <div></div>
                 {/* here every onChange event triggers reconsoliation cycle on the entire body */}
                 {/* but only the input box is rerendered as its the only diff between the 2 virtual DOMs */}
                 {/* Its updating the value attribute of the input box in every reconsoliation cycle */}
-                <input type="text" className="searchBox" value={searchBoxInputText} onChange={(e) => setSearchBoxInputText(e.target.value)} />
-                <button
-                    onClick={() => {
-                        console.log(searchBoxInputText);
-                        setStatefulFilteredCardDataListFn(statefulCardDataList.filter(card => card.info.name.toLowerCase().includes(searchBoxInputText.toLowerCase())));
-                    }}>Search</button>
-                <section id="filterContainer">
-                    <button id='filterButton' className="m-[10px] cursor-pointer"
+                <div className="flex gap-4 items-center justify-center flex-grow">
+                    <section id="filterContainer">
+                        <button id='filterButton'
+                            class="px-4 py-2 h-auto bg-[lightgrey] text-black font-bold rounded-lg hover:bg-[grey] focus:ring-2 focus:ring-[grey] focus:ring-offset-2"
+                            onClick={() => {
+                                // filteredCardDataList = CardDataList.filter(card => card.info.avgRating >= 4.5)
+                                setStatefulFilteredCardDataListFn(statefulCardDataList.filter(card => card.info.avgRating >= 4.5))
+                                // whenever a state variable is updated, the component associated to it is re rendered
+                            }}>
+                            Top Rated(4.5★ or more)
+                        </button>
+                    </section>
+                    <input type="text" className="px-4 py-2 border-2 ring-2 ring-[lightgrey] border-[lightgrey] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                        value={searchBoxInputText}
+                        placeholder={loggedInUsername == "" ? "" : "Hi " + loggedInUsername}
+                        onChange={(e) => setSearchBoxInputText(e.target.value)} />
+                    <button
+                        class="px-4 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                         onClick={() => {
-                            // filteredCardDataList = CardDataList.filter(card => card.info.avgRating >= 4.5)
-                            setStatefulFilteredCardDataListFn(statefulCardDataList.filter(card => card.info.avgRating >= 4.5))
-                            // whenever a state variable is updated, the component associated to it is re rendered
-                        }}>
-                        Top Rated(4.5★ or more)
-                    </button>
-                </section>
+                            console.log(searchBoxInputText);
+                            setStatefulFilteredCardDataListFn(statefulCardDataList.filter(card => card.info.name.toLowerCase().includes(searchBoxInputText.toLowerCase())));
+                        }}>Search</button>
+                </div>
             </section>
-            <section id="cardContainer" className="flex flex-wrap">
+            <section id="cardContainer" className="flex flex-wrap items-center">
                 {/* <Card
             // cardName="La Pino'z Pizza" cardCuisine="Italian" cardETA="30" cardRating="4"
             // cardImageSrc="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f44bc9708c514cd2dd6ae0d8b4677214"
