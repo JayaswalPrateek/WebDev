@@ -6,6 +6,10 @@ import { useDispatch } from "react-redux"
 import { clearCart } from "../utils/cartSlice";
 
 const Cart = () => {
+    // avoid subscribing to data that's not needed to optimize performance
+    // design the store and its slices with logical seperation, loose coupling
+    // the subscriber is notified when the subscribed data mutates
+    // if the subscriber not using some data, its still being notified when it changes
     const cart = useSelector((store) => store.cart.items)
     const data = {
         itemCards: cart,

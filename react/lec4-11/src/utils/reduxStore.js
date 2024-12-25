@@ -27,7 +27,7 @@ import cartReducer from "./cartSlice";
 // so all their reducers too are part of the reducer of the same larger store
 // and aggregately mention them in configureStore()
 const reduxStore = configureStore({
-    reducer: {
+    reducer: { // singluar coz it contains/aggregates all reducers(plural coz contains methods)
         cart: cartReducer
         // ...
     }

@@ -26,6 +26,10 @@ import { useSelector } from "react-redux";
 const AppHeader = (props) => {
     const [loginButtonText, setLoginButtonText] = useState("Login")
     const networkStatus = useNetworkStatus();
+    // avoid subscribing to data that's not needed to optimize performance
+    // design the store and its slices with logical seperation, loose coupling
+    // the subscriber is notified when the subscribed data mutates
+    // if the subscriber not using some data, its still being notified when it changes
     const cart = useSelector((store) => store.cart.items)
     console.log(cart)
     const cartSize = cart.length
