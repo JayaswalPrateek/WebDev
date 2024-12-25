@@ -35,10 +35,11 @@ const AppHeader = (props) => {
     const cartSize = cart.length
     return (
         <header id="appHeader" className="flex justify-between items-center px-[20px] py-0">
-            <div id="logo" className="font-['Jua',_sans-serif] font-normal not-italic text-[75px]">🥣 Spoonful</div>
+            <div id="logo" className="font-['Jua',_sans-serif] font-normal not-italic text-[75px]">
+                <Link to="/">🥣 Spoonful</Link>
+            </div>
             <nav id="navContainer" className="font-['Inter',_sans-serif] font-semibold not-italic flex items-center">
                 <ul id="navItems" className="flex items-center">
-                    <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="/">Home</Link></li>
                     <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="/about">About Us</Link></li>
                     <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="contact">Contact Us</Link></li>
                     <li className="p-[15px] m-[15px] text-[25px] list-none">
