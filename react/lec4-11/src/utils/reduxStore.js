@@ -20,8 +20,18 @@
  *      - if reducer changes some data, the data's subscribers update the value automatically
 */
 import { configureStore } from "@reduxjs/toolkit";
+// import reducers from all the stores:
+import cartReducer from "./cartSlice";
 
-const reduxStore = configureStore({})
+// since all the slices are a part of the larger store,
+// so all their reducers too are part of the reducer of the same larger store
+// and aggregately mention them in configureStore()
+const reduxStore = configureStore({
+    reducer: {
+        cart: cartReducer
+        // ...
+    }
+})
 
 export default reduxStore;
 // Now we import it wherever we need to read/write data
