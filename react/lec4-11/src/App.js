@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+
 import AppHeader from "./components/AppHeader";
 import AppMain from "./components/AppMain";
 import AppFooter from "./components/AppFooter";
@@ -7,11 +8,16 @@ import AboutUS from "./components/AboutUs";
 import ContactUs from "./components/ContactUS";
 import SmthWentWrong from "./components/SmthWentWrong";
 import RestaurantMenu from "./components/RestaurantMenu";
+
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 
 // lec 11:
 import { useState } from "react";
 import UserContext from "./utils/UserContext";
+
+//lec 12:
+import { Provider } from "react-redux";
+import reduxStore from "./utils/reduxStore";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -46,16 +52,18 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 const AppContainer = () => {
     const [username, setUsername] = useState("");
     return (
-        <UserContext.Provider value={{ loggedInUsername: username }}> {/* lec 11 */}
-            <div id="appContainer" className="flex flex-col flex-grow justify-between h-screen">
-                <div>
-                    <AppHeader username={username} setUsername={setUsername} /> {/* always visible */}
-                    {/* Conditionally render children here based on the route */}
-                    <Outlet /> { /* Just add this and it will take care of it */}
-                </div>
-                <AppFooter /> {/* always visible */}
-            </div >
-        </UserContext.Provider>
+        <Provider store={reduxStore}> {/* lec 12 */}
+            <UserContext.Provider value={{ loggedInUsername: username }}> {/* lec 11 */}
+                <div id="appContainer" className="flex flex-col flex-grow justify-between h-screen">
+                    <div>
+                        <AppHeader username={username} setUsername={setUsername} /> {/* always visible */}
+                        {/* Conditionally render children here based on the route */}
+                        <Outlet /> { /* Just add this and it will take care of it */}
+                    </div>
+                    <AppFooter /> {/* always visible */}
+                </div >
+            </UserContext.Provider>
+        </Provider>
     );
 }
 
