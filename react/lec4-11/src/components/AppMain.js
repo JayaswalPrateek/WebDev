@@ -126,7 +126,7 @@ const AppMain = () => {
                         placeholder={loggedInUsername == "" ? "" : "Hi " + loggedInUsername}
                         onChange={(e) => setSearchBoxInputText(e.target.value)} />
                     <button
-                        class="px-4 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                        className="px-4 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                         onClick={() => {
                             console.log(searchBoxInputText);
                             setStatefulFilteredCardDataListFn(statefulCardDataList.filter(card => card.info.name.toLowerCase().includes(searchBoxInputText.toLowerCase())));
