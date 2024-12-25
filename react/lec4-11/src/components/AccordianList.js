@@ -18,15 +18,21 @@ const AccordianList = (props) => {
                                 <span className="italic font-bold text-xl">{name}</span>
                                 <div className="flex items-center justify-center">
                                     <span className="font-extrabold">₹ {displayPrice}</span>
-                                    <button className="font-semibold text-xl border border-[grey] rounded-xl p-0 m-2 h-8 w-8"
-                                        onClick={() => {
-                                            // dispatch an action that was exported by the slice
-                                            dispatch(addItem(dish))
-                                            // action is the argument to the dispatcher
-                                            // argument to this action is the payload
-                                        }}>
-                                        +
-                                    </button>
+                                    {
+                                        // safe conditional rendering to ensure + button isnt shown on the cart page
+                                        !props.data.hasOwnProperty('noAdd') ?
+                                            <button className="font-semibold text-xl border border-[grey] rounded-xl p-0 m-2 h-8 w-8"
+                                                onClick={() => {
+                                                    // dispatch an action that was exported by the slice
+                                                    dispatch(addItem(dish))
+                                                    // action is the argument to the dispatcher
+                                                    // argument to this action is the payload
+                                                }}>
+                                                +
+                                            </button>
+                                            :
+                                            <div></div>
+                                    }
                                 </div>
                             </div>
                             <p className="text-xs ">{description}</p>
