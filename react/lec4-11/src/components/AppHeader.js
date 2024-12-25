@@ -37,7 +37,9 @@ const AppHeader = (props) => {
                     <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="/">Home</Link></li>
                     <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="/about">About Us</Link></li>
                     <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="contact">Contact Us</Link></li>
-                    <li className="p-[15px] m-[15px] text-[25px] list-none">Cart{cartSize == 0 ? "" : "(" + cartSize + ")"}</li>
+                    <li className="p-[15px] m-[15px] text-[25px] list-none">
+                        <Link to='/cart'>Cart{cartSize == 0 ? "" : "(" + cartSize + ")"}</Link>
+                    </li>
                     <li className="p-[15px] m-[15px] text-[25px] list-none">
                         <button id="loginButton" className="font-['Inter',_sans-serif] font-semibold not-italic h-[30px] text-[25px] cursor-pointer border-[none] [background-color:inherit]"
                             onClick={() => {

@@ -8,6 +8,7 @@ import AboutUS from "./components/AboutUs";
 import ContactUs from "./components/ContactUS";
 import SmthWentWrong from "./components/SmthWentWrong";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Cart from "./components/Cart";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 
@@ -85,6 +86,9 @@ const appRouter = createBrowserRouter([{
             // so depending upon the specified name of the restaurant, we
             // make sure to load the menu specific to that restaurant.
             element: <RestaurantMenu />
+        }, {
+            path: '/cart',
+            element: <Cart />
         }],
     errorElement: <SmthWentWrong />,
 }
