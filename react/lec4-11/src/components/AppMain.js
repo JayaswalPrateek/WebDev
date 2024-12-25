@@ -112,7 +112,7 @@ const AppMain = () => {
                 <div className="flex gap-4 items-center justify-center flex-grow">
                     <section id="filterContainer">
                         <button id='filterButton'
-                            class="px-4 py-2 h-auto bg-[lightgrey] text-black font-bold rounded-lg hover:bg-[grey] focus:ring-2 focus:ring-[grey] focus:ring-offset-2"
+                            className="px-4 py-2 h-auto bg-[lightgrey] text-black font-bold rounded-lg hover:bg-[grey] focus:ring-2 focus:ring-[grey] focus:ring-offset-2"
                             onClick={() => {
                                 // filteredCardDataList = CardDataList.filter(card => card.info.avgRating >= 4.5)
                                 setStatefulFilteredCardDataListFn(statefulCardDataList.filter(card => card.info.avgRating >= 4.5))
