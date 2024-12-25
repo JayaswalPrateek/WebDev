@@ -21,9 +21,14 @@ import useNetworkStatus from "../utils/useNetworkStatus";
  * while using the app even if we arent making api calls.
  */
 
+import { useSelector } from "react-redux";
+
 const AppHeader = (props) => {
     const [loginButtonText, setLoginButtonText] = useState("Login")
     const networkStatus = useNetworkStatus();
+    const cart = useSelector((store) => store.cart.items)
+    console.log(cart)
+    const cartSize = cart.length
     return (
         <header id="appHeader" className="flex justify-between items-center px-[20px] py-0">
             <div id="logo" className="font-['Jua',_sans-serif] font-normal not-italic text-[75px]">🥣 Spoonful</div>
@@ -32,7 +37,7 @@ const AppHeader = (props) => {
                     <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="/">Home</Link></li>
                     <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="/about">About Us</Link></li>
                     <li className="p-[15px] m-[15px] text-[25px] list-none"><Link to="contact">Contact Us</Link></li>
-                    <li className="p-[15px] m-[15px] text-[25px] list-none">Cart</li>
+                    <li className="p-[15px] m-[15px] text-[25px] list-none">Cart{cartSize == 0 ? "" : "(" + cartSize + ")"}</li>
                     <li className="p-[15px] m-[15px] text-[25px] list-none">
                         <button id="loginButton" className="font-['Inter',_sans-serif] font-semibold not-italic h-[30px] text-[25px] cursor-pointer border-[none] [background-color:inherit]"
                             onClick={() => {

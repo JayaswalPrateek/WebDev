@@ -39,3 +39,5 @@ export default reduxStore;
 // import { Provider } from "react-redux";
 // import reduxStore
 // and wrap the entire app with <Provider store={reduxStore}></Provider>
+// a selector is nothing but a hook in react called useSelector()
+//      - we need to specify the slice we want to access
