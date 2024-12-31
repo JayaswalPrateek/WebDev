@@ -44,3 +44,18 @@ test("Should render the AppHeader component with a login button", () => {
 
     expect(loginButton).toBeInTheDocument();
 })
+
+
+test("Should render the AppHeader component with 0 cart items", () => {
+    render(
+        <BrowserRouter>
+            <Provider store={reduxStore}>
+                <AppHeader />
+            </Provider>
+        </BrowserRouter>
+    )
+
+    const cartItems = screen.getByText(/Cart/); // regex
+
+    expect(cartItems).toBeInTheDocument();
+})
