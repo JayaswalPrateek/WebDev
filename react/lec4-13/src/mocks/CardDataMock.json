@@ -1,0 +1,11 @@
+{
+  "info": {
+    "name": "Louis Burger",
+    "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/4/10/7b80ba46-8076-4bed-928d-6f39f435ef75_772275.jpg",
+    "cuisines": ["Burgers", "American", "Fast Food"],
+    "sla": {
+      "deliveryTime": 29
+    },
+    "avgRating": 4.1
+  }
+}
