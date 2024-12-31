@@ -1,0 +1,1 @@
+export const Add2NosDemo = (x, y) => x + y;
