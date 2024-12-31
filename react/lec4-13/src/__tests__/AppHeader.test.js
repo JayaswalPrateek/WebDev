@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import AppHeader from "../components/AppHeader"
 import { Provider } from "react-redux"
 import reduxStore from "../utils/reduxStore"
@@ -58,4 +58,24 @@ test("Should render the AppHeader component with 0 cart items", () => {
     const cartItems = screen.getByText(/Cart/); // regex
 
     expect(cartItems).toBeInTheDocument();
+})
+
+test("Should toggle between login and logout buttons onclick", () => {
+    jest.spyOn(window, 'prompt').mockImplementation(() => 'guest');
+    const mockSetUsername = jest.fn();
+
+    render(
+        <BrowserRouter>
+            <Provider store={reduxStore}>
+                <AppHeader setUsername={mockSetUsername} />
+            </Provider>
+        </BrowserRouter>
+    )
+
+    fireEvent.click(screen.getByText("Login"))
+    expect(window.prompt).toHaveBeenCalled();
+    const logOutButton = screen.getByRole("button", { name: "Log Out(guest)" })
+    expect(logOutButton).toBeInTheDocument();
+
+    window.prompt.mockRestore(); // Cleanup
 })
