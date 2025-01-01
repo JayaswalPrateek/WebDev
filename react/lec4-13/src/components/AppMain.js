@@ -122,6 +122,7 @@ const AppMain = () => {
                         </button>
                     </section>
                     <input type="text" className="px-4 py-2 border-2 ring-2 ring-[lightgrey] border-[lightgrey] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+                        data-testid="searchInput"
                         value={searchBoxInputText}
                         placeholder={loggedInUsername == "" ? "" : "Hi " + loggedInUsername}
                         onChange={(e) => setSearchBoxInputText(e.target.value)} />

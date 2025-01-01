@@ -2,7 +2,7 @@ import { CDN_URL } from "../utils/constants";
 const Card = (props) => {
     const { name, cloudinaryImageId, cuisines, sla, avgRating } = props.CardData.info;
     return (
-        <div className="flex flex-col rounded-lg h-[450px] w-[200px] bg-[lightgrey] hover:cursor-pointer m-5 hover:border-[2px] hover:border-[solid] hover:border-[grey]">
+        <div data-testid="Card" className="flex flex-col rounded-lg h-[450px] w-[200px] bg-[lightgrey] hover:cursor-pointer m-5 hover:border-[2px] hover:border-[solid] hover:border-[grey]">
             <img className="h-[200px] object-cover rounded-t-lg w-full" alt={name} src={CDN_URL + cloudinaryImageId}></img>
             <div className="text-center p-2 flex flex-col flex-grow items-center justify-evenly">
                 <h3 className="font-bold text-xl">{name}</h3>

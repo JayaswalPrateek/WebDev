@@ -1,0 +1,1743 @@
+{
+  "data": {
+    "cards": [
+      {},
+      {
+        "card": {
+          "card": {
+            "gridElements": {
+              "infoWithStyle": {
+                "restaurants": [
+                  {
+                    "info": {
+                      "id": "27414",
+                      "name": "Pizza Hut",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/7/16/ccc22e13-8ef7-431f-bfe6-1e3cfb4901be_27414.jpg",
+                      "locality": "Thane West",
+                      "areaName": "Thane West",
+                      "costForTwo": "₹300 for two",
+                      "cuisines": ["Pizzas"],
+                      "avgRating": 4.1,
+                      "parentId": "721",
+                      "avgRatingString": "4.1",
+                      "totalRatingsString": "8.3K+",
+                      "sla": {
+                        "deliveryTime": 35,
+                        "lastMileTravel": 1.2,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "35-40 mins",
+                        "lastMileTravelString": "1.2 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-01 23:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "Rxawards/_CATEGORY-Pizza.png",
+                            "description": "Delivery!"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "Delivery!",
+                                  "imageId": "Rxawards/_CATEGORY-Pizza.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "60% OFF",
+                        "subHeader": "UPTO ₹120"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "4.5",
+                          "ratingCount": "1.2K+"
+                        },
+                        "source": "GOOGLE",
+                        "sourceIconImageId": "v1704440323/google_ratings/rating_google_tag"
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/pizza-hut-thane-west-rest27414",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "722837",
+                      "name": "Chinese Wok",
+                      "cloudinaryImageId": "e0839ff574213e6f35b3899ebf1fc597",
+                      "locality": "Thane West",
+                      "areaName": "Viviana",
+                      "costForTwo": "₹250 for two",
+                      "cuisines": ["Chinese", "Asian", "Tibetan", "Desserts"],
+                      "avgRating": 4.2,
+                      "parentId": "61955",
+                      "avgRatingString": "4.2",
+                      "totalRatingsString": "1.2K+",
+                      "sla": {
+                        "deliveryTime": 32,
+                        "lastMileTravel": 1.7,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "30-35 mins",
+                        "lastMileTravelString": "1.7 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-01 23:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "Rxawards/_CATEGORY-Chinese.png",
+                            "description": "Delivery!"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "Delivery!",
+                                  "imageId": "Rxawards/_CATEGORY-Chinese.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "ITEMS",
+                        "subHeader": "AT ₹149"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/chinese-wok-thane-west-viviana-rest722837",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "559109",
+                      "name": "Subway",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/9/763d2e67-2157-4b39-862d-bc8a6706de0f_559109.JPG",
+                      "locality": "Mangal Pandey Road",
+                      "areaName": "Korum Mall",
+                      "costForTwo": "₹350 for two",
+                      "cuisines": [
+                        "sandwich",
+                        "Salads",
+                        "wrap",
+                        "Healthy Food"
+                      ],
+                      "avgRating": 4.2,
+                      "parentId": "2",
+                      "avgRatingString": "4.2",
+                      "totalRatingsString": "1.3K+",
+                      "sla": {
+                        "deliveryTime": 29,
+                        "lastMileTravel": 1.2,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "25-30 mins",
+                        "lastMileTravelString": "1.2 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-01 23:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "Rxawards/_CATEGORY-Sandwiches.png",
+                            "description": "Delivery!"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "Delivery!",
+                                  "imageId": "Rxawards/_CATEGORY-Sandwiches.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "₹175 OFF",
+                        "subHeader": "ABOVE ₹349",
+                        "discountTag": "FLAT DEAL"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/subway-mangal-pandey-road-korum-mall-rest559109",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "9648",
+                      "name": "Burger King",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/11/7f76a072-c1bc-4d74-ac56-33e0eea20c1e_9648.JPG",
+                      "locality": "Korum mall",
+                      "areaName": "Thane West",
+                      "costForTwo": "₹350 for two",
+                      "cuisines": ["Burgers", "American"],
+                      "avgRating": 4.3,
+                      "parentId": "166",
+                      "avgRatingString": "4.3",
+                      "totalRatingsString": "51K+",
+                      "sla": {
+                        "deliveryTime": 32,
+                        "lastMileTravel": 1.4,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "30-35 mins",
+                        "lastMileTravelString": "1.4 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-01 23:59:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "bolt/Bolt%20Listing%20badge@3x.png",
+                            "description": "bolt!"
+                          },
+                          {
+                            "imageId": "Rxawards/_CATEGORY-Burger.png",
+                            "description": "Delivery!"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "bolt!",
+                                  "imageId": "bolt/Bolt%20Listing%20badge@3x.png"
+                                }
+                              },
+                              {
+                                "attributes": {
+                                  "description": "Delivery!",
+                                  "imageId": "Rxawards/_CATEGORY-Burger.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "60% OFF",
+                        "subHeader": "UPTO ₹120"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/burger-king-korum-mall-thane-west-rest9648",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "642296",
+                      "name": "FreshMenu",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/26/1696f3bd-a592-45f8-8532-772944c39dfe_642296.JPG",
+                      "locality": "PANCHPAKHADI",
+                      "areaName": "Thane",
+                      "costForTwo": "₹250 for two",
+                      "cuisines": [
+                        "Continental",
+                        "Chinese",
+                        "Oriental",
+                        "Asian",
+                        "Healthy Food",
+                        "Fast Food",
+                        "Indian",
+                        "Desserts"
+                      ],
+                      "avgRating": 4.1,
+                      "parentId": "398",
+                      "avgRatingString": "4.1",
+                      "totalRatingsString": "6.9K+",
+                      "sla": {
+                        "deliveryTime": 31,
+                        "lastMileTravel": 2.2,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "30-35 mins",
+                        "lastMileTravelString": "2.2 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-01 23:59:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "textExtendedBadges": [
+                          {
+                            "iconId": "guiltfree/GF_Logo_android_3x",
+                            "shortDescription": "options available",
+                            "fontColor": "#7E808C"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "",
+                                  "fontColor": "#7E808C",
+                                  "iconId": "guiltfree/GF_Logo_android_3x",
+                                  "shortDescription": "options available"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "ITEMS",
+                        "subHeader": "AT ₹69"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/freshmenu-panchpakhadi-thane-rest642296",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "531073",
+                      "name": "Domino's Pizza",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/11/29/6c6adb48-1966-4d2f-ad94-09cc28f8628e_531073.jpg",
+                      "locality": "Upvan",
+                      "areaName": "Thane West",
+                      "costForTwo": "₹400 for two",
+                      "cuisines": ["Pizzas", "Italian", "Pastas", "Desserts"],
+                      "avgRating": 4.5,
+                      "parentId": "2456",
+                      "avgRatingString": "4.5",
+                      "totalRatingsString": "1.5K+",
+                      "sla": {
+                        "deliveryTime": 25,
+                        "lastMileTravel": 1,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "20-25 mins",
+                        "lastMileTravelString": "1.0 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-02 00:59:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "bolt/Bolt%20Listing%20badge@3x.png",
+                            "description": "bolt!"
+                          },
+                          {
+                            "imageId": "Rxawards/_CATEGORY-Pizza.png",
+                            "description": "Delivery!"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "bolt!",
+                                  "imageId": "bolt/Bolt%20Listing%20badge@3x.png"
+                                }
+                              },
+                              {
+                                "attributes": {
+                                  "description": "Delivery!",
+                                  "imageId": "Rxawards/_CATEGORY-Pizza.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "ITEMS",
+                        "subHeader": "AT ₹89"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/dominos-pizza-upvan-thane-west-rest531073",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "6873",
+                      "name": "Baskin Robbins - Ice Cream Desserts",
+                      "cloudinaryImageId": "85ccae4e3576f9330af102c46ca85395",
+                      "locality": "Near Aradhana Cinema",
+                      "areaName": "Panchpakhadi",
+                      "costForTwo": "₹250 for two",
+                      "cuisines": ["Desserts", "Ice Cream"],
+                      "avgRating": 4.7,
+                      "veg": true,
+                      "parentId": "5588",
+                      "avgRatingString": "4.7",
+                      "totalRatingsString": "3.0K+",
+                      "sla": {
+                        "deliveryTime": 21,
+                        "lastMileTravel": 2.9,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "20-25 mins",
+                        "lastMileTravelString": "2.9 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-02 01:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "Rxawards/_CATEGORY-Ice-creams.png",
+                            "description": "Delivery!"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "Delivery!",
+                                  "imageId": "Rxawards/_CATEGORY-Ice-creams.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "50% OFF",
+                        "subHeader": "UPTO ₹100"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/baskin-robbins-ice-cream-desserts-near-aradhana-cinema-panchpakhadi-rest6873",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "284236",
+                      "name": "Home Plate by EatFit",
+                      "cloudinaryImageId": "e975b355e30661b40e3522641689cede",
+                      "locality": "Chitalsar Manpada",
+                      "areaName": "Thane",
+                      "costForTwo": "₹250 for two",
+                      "cuisines": [
+                        "North Indian",
+                        "Home Food",
+                        "Healthy Food",
+                        "Indian",
+                        "Punjabi",
+                        "South Indian",
+                        "Rajasthani",
+                        "Maharashtrian",
+                        "Snacks",
+                        "Desserts"
+                      ],
+                      "avgRating": 4.2,
+                      "parentId": "301197",
+                      "avgRatingString": "4.2",
+                      "totalRatingsString": "1.6K+",
+                      "sla": {
+                        "deliveryTime": 23,
+                        "lastMileTravel": 3.6,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "20-25 mins",
+                        "lastMileTravelString": "3.6 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-01 23:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "textExtendedBadges": [
+                          {
+                            "iconId": "guiltfree/GF_Logo_android_3x",
+                            "shortDescription": "options available",
+                            "fontColor": "#7E808C"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "",
+                                  "fontColor": "#7E808C",
+                                  "iconId": "guiltfree/GF_Logo_android_3x",
+                                  "shortDescription": "options available"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "ITEMS",
+                        "subHeader": "AT ₹89"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/home-plate-by-eatfit-chitalsar-manpada-thane-rest284236",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "14558",
+                      "name": "KFC",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/9/f34fc8ce-47c1-43cb-9d43-b575bf06634a_14558.JPG",
+                      "locality": "Mangal Pandey Road",
+                      "areaName": "Thane Panchpakhadi",
+                      "costForTwo": "₹400 for two",
+                      "cuisines": ["Burgers", "Fast Food", "Rolls & Wraps"],
+                      "avgRating": 4.1,
+                      "parentId": "547",
+                      "avgRatingString": "4.1",
+                      "totalRatingsString": "12K+",
+                      "sla": {
+                        "deliveryTime": 26,
+                        "lastMileTravel": 1.2,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "25-30 mins",
+                        "lastMileTravelString": "1.2 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-02 00:00:00",
+                        "opened": true
+                      },
+                      "badges": {},
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "50% OFF",
+                        "subHeader": "UPTO ₹80"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/kfc-mangal-pandey-road-thane-panchpakhadi-rest14558",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "93243",
+                      "name": "McDonald's",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/9/18/c17badb3-7c5a-4770-89e8-1d179f605404_93243.jpg",
+                      "locality": "Korum Mall",
+                      "areaName": "Thane Panchpakhadi",
+                      "costForTwo": "₹400 for two",
+                      "cuisines": ["Burgers", "Beverages", "Cafe", "Desserts"],
+                      "avgRating": 4.6,
+                      "parentId": "630",
+                      "avgRatingString": "4.6",
+                      "totalRatingsString": "13K+",
+                      "sla": {
+                        "deliveryTime": 18,
+                        "lastMileTravel": 1.3,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "15-20 mins",
+                        "lastMileTravelString": "1.3 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-01 23:45:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "Rxawards/_CATEGORY-Burger.png",
+                            "description": "Delivery!"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "Delivery!",
+                                  "imageId": "Rxawards/_CATEGORY-Burger.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "ITEMS",
+                        "subHeader": "AT ₹99"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/mcdonalds-korum-mall-thane-panchpakhadi-rest93243",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "754063",
+                      "name": "Daily Kitchen - Homely Meals",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/5/19/8a1d8aae-63c3-4033-a8b4-5d0eac490c8f_754063.JPG",
+                      "locality": "Pokhran road no.1",
+                      "areaName": "Vartak Nagar",
+                      "costForTwo": "₹250 for two",
+                      "cuisines": [
+                        "Home Food",
+                        "Indian",
+                        "North Indian",
+                        "Thalis"
+                      ],
+                      "avgRating": 4.2,
+                      "parentId": "444382",
+                      "avgRatingString": "4.2",
+                      "totalRatingsString": "223",
+                      "sla": {
+                        "deliveryTime": 20,
+                        "lastMileTravel": 0.2,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "15-25 mins",
+                        "lastMileTravelString": "0.2 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-02 02:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "textExtendedBadges": [
+                          {
+                            "iconId": "guiltfree/GF_Logo_android_3x",
+                            "shortDescription": "options available",
+                            "fontColor": "#7E808C"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "",
+                                  "fontColor": "#7E808C",
+                                  "iconId": "guiltfree/GF_Logo_android_3x",
+                                  "shortDescription": "options available"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "₹100 OFF",
+                        "subHeader": "ABOVE ₹499",
+                        "discountTag": "FLAT DEAL"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/daily-kitchen-homely-meals-pokhran-road-no-1-vartak-nagar-rest754063",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "296051",
+                      "name": "Big Bowl",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/22/deff0d02-ca1d-4ef9-9d62-b0cbeabf33d3_296051.JPG",
+                      "locality": "LB Marg",
+                      "areaName": "Thane Panchpakhadi",
+                      "costForTwo": "₹300 for two",
+                      "cuisines": [
+                        "North Indian",
+                        "Chinese",
+                        "Tibetan",
+                        "Desserts"
+                      ],
+                      "avgRating": 4.4,
+                      "parentId": "434792",
+                      "avgRatingString": "4.4",
+                      "totalRatingsString": "3.6K+",
+                      "sla": {
+                        "deliveryTime": 30,
+                        "lastMileTravel": 2.2,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "25-30 mins",
+                        "lastMileTravelString": "2.2 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-02 01:00:00",
+                        "opened": true
+                      },
+                      "badges": {},
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "ITEMS",
+                        "subHeader": "AT ₹149"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/big-bowl-lb-marg-thane-panchpakhadi-rest296051",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "375850",
+                      "name": "The Boston Cafe & Patisserie",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/11/28/086b01b5-745a-4bca-b4c0-0007a3770601_375850.jpg",
+                      "locality": "Thane West",
+                      "areaName": "Thane West",
+                      "costForTwo": "₹500 for two",
+                      "cuisines": ["Desserts", "Bakery"],
+                      "avgRating": 4.4,
+                      "parentId": "22109",
+                      "avgRatingString": "4.4",
+                      "totalRatingsString": "1.6K+",
+                      "sla": {
+                        "deliveryTime": 16,
+                        "lastMileTravel": 1.7,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "15-20 mins",
+                        "lastMileTravelString": "1.7 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-01 23:59:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "bolt/Bolt%20Listing%20badge@3x.png",
+                            "description": "bolt!"
+                          },
+                          {
+                            "imageId": "newg.png",
+                            "description": "Gourmet"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "bolt!",
+                                  "imageId": "bolt/Bolt%20Listing%20badge@3x.png"
+                                }
+                              },
+                              {
+                                "attributes": {
+                                  "description": "Gourmet",
+                                  "imageId": "newg.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "60% OFF",
+                        "subHeader": "UPTO ₹120"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "3.9",
+                          "ratingCount": "230"
+                        },
+                        "source": "GOOGLE",
+                        "sourceIconImageId": "v1704440323/google_ratings/rating_google_tag"
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/the-boston-cafe-and-patisserie-thane-west-rest375850",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "478404",
+                      "name": "JOSHH - India Ka Apna Taste",
+                      "cloudinaryImageId": "pfeaxy18cmqh92ihmd9r",
+                      "locality": "Majiwada",
+                      "areaName": "Thane West",
+                      "costForTwo": "₹200 for two",
+                      "cuisines": [
+                        "Indian",
+                        "North Indian",
+                        "South Indian",
+                        "Thalis",
+                        "Ice Cream",
+                        "Snacks",
+                        "Street Food",
+                        "Chaat",
+                        "Desserts"
+                      ],
+                      "avgRating": 4.4,
+                      "parentId": "304234",
+                      "avgRatingString": "4.4",
+                      "totalRatingsString": "1.0K+",
+                      "sla": {
+                        "deliveryTime": 29,
+                        "lastMileTravel": 1.7,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "25-30 mins",
+                        "lastMileTravelString": "1.7 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-01 23:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "v1695133679/badges/Pure_Veg111.png",
+                            "description": "pureveg"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "aggregatedDiscountInfoV2": {},
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "pureveg",
+                                  "imageId": "v1695133679/badges/Pure_Veg111.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "3.8",
+                          "ratingCount": "69"
+                        },
+                        "source": "GOOGLE",
+                        "sourceIconImageId": "v1704440323/google_ratings/rating_google_tag"
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/joshh-india-ka-apna-taste-majiwada-thane-west-rest478404",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "390175",
+                      "name": "NH1 Bowls - Highway To North",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/11/8/ca3c90c3-ba45-4ac2-ba3b-854e309bb285_390175.jpg",
+                      "locality": "Vartak Nagar",
+                      "areaName": "Vartak Nagar",
+                      "costForTwo": "₹250 for two",
+                      "cuisines": ["North Indian", "Punjabi", "Home Food"],
+                      "avgRating": 4.6,
+                      "parentId": "22452",
+                      "avgRatingString": "4.6",
+                      "totalRatingsString": "593",
+                      "sla": {
+                        "deliveryTime": 25,
+                        "lastMileTravel": 0.2,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "20-30 mins",
+                        "lastMileTravelString": "0.2 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-02 02:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "textExtendedBadges": [
+                          {
+                            "iconId": "guiltfree/GF_Logo_android_3x",
+                            "shortDescription": "options available",
+                            "fontColor": "#7E808C"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {},
+                          "textBased": {},
+                          "textExtendedBadges": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "",
+                                  "fontColor": "#7E808C",
+                                  "iconId": "guiltfree/GF_Logo_android_3x",
+                                  "shortDescription": "options available"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "ITEMS",
+                        "subHeader": "AT ₹139"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/nh1-bowls-highway-to-north-vartak-nagar-rest390175",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "47606",
+                      "name": "Theobroma",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/18/3363bacf-db27-47c5-9944-4f5d3b41e42d_47606.jpg",
+                      "locality": "Eastern Express Highway",
+                      "areaName": "Thane West",
+                      "costForTwo": "₹400 for two",
+                      "cuisines": ["Bakery", "Desserts"],
+                      "avgRating": 4.6,
+                      "parentId": "1040",
+                      "avgRatingString": "4.6",
+                      "totalRatingsString": "8.5K+",
+                      "sla": {
+                        "deliveryTime": 32,
+                        "lastMileTravel": 1.7,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "30-35 mins",
+                        "lastMileTravelString": "1.7 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-01 23:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "bolt/Bolt%20Listing%20badge@3x.png",
+                            "description": "bolt!"
+                          },
+                          {
+                            "imageId": "Rxawards/_CATEGORY-Desserts.png",
+                            "description": "Delivery!"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "bolt!",
+                                  "imageId": "bolt/Bolt%20Listing%20badge@3x.png"
+                                }
+                              },
+                              {
+                                "attributes": {
+                                  "description": "Delivery!",
+                                  "imageId": "Rxawards/_CATEGORY-Desserts.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "ITEMS",
+                        "subHeader": "AT ₹49"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/theobroma-eastern-express-highway-thane-west-rest47606",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "769705",
+                      "name": "Entisi Chocolatier",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/12/d7397d5f-f2a5-4617-b6ff-d77d71323639_769705.jpg",
+                      "locality": "Thane Municipal Corporation",
+                      "areaName": "Thane Panchpakhadi",
+                      "costForTwo": "₹950 for two",
+                      "cuisines": ["Desserts", "Sweets"],
+                      "avgRating": 4.9,
+                      "veg": true,
+                      "parentId": "413280",
+                      "avgRatingString": "4.9",
+                      "totalRatingsString": "17",
+                      "sla": {
+                        "deliveryTime": 20,
+                        "lastMileTravel": 1.8,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "15-20 mins",
+                        "lastMileTravelString": "1.8 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-01 18:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "bolt/Bolt%20Listing%20badge@3x.png",
+                            "description": "bolt!"
+                          },
+                          {
+                            "imageId": "newg.png",
+                            "description": "Gourmet"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "bolt!",
+                                  "imageId": "bolt/Bolt%20Listing%20badge@3x.png"
+                                }
+                              },
+                              {
+                                "attributes": {
+                                  "description": "Gourmet",
+                                  "imageId": "newg.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "60% OFF",
+                        "subHeader": "UPTO ₹120"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/entisi-chocolatier-thane-municipal-corporation-thane-panchpakhadi-rest769705",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "257735",
+                      "name": "Great Indian Khichdi by EatFit",
+                      "cloudinaryImageId": "6e44fd7f1e5cd9967edfe47c10247671",
+                      "locality": "Chitalsar Manpada",
+                      "areaName": "Thane",
+                      "costForTwo": "₹200 for two",
+                      "cuisines": [
+                        "Home Food",
+                        "Indian",
+                        "North Indian",
+                        "Healthy Food",
+                        "Snacks",
+                        "Desserts",
+                        "Rajasthani",
+                        "South Indian",
+                        "Maharashtrian",
+                        "Sweets"
+                      ],
+                      "avgRating": 4.4,
+                      "veg": true,
+                      "parentId": "319582",
+                      "avgRatingString": "4.4",
+                      "totalRatingsString": "5.0K+",
+                      "sla": {
+                        "deliveryTime": 19,
+                        "lastMileTravel": 3.6,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "15-20 mins",
+                        "lastMileTravelString": "3.6 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-01 23:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "v1695133679/badges/Pure_Veg111.png",
+                            "description": "pureveg"
+                          }
+                        ],
+                        "textExtendedBadges": [
+                          {
+                            "iconId": "guiltfree/GF_Logo_android_3x",
+                            "shortDescription": "brand",
+                            "fontColor": "#7E808C"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "pureveg",
+                                  "imageId": "v1695133679/badges/Pure_Veg111.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "",
+                                  "fontColor": "#7E808C",
+                                  "iconId": "guiltfree/GF_Logo_android_3x",
+                                  "shortDescription": "brand"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "ITEMS",
+                        "subHeader": "AT ₹64"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/great-indian-khichdi-by-eatfit-chitalsar-manpada-thane-rest257735",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "730204",
+                      "name": "Olio - The Wood Fired Pizzeria",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/11/29/3eae6654-3483-44fe-b69d-b988fa2108ef_730204.jpg",
+                      "locality": "S V Road",
+                      "areaName": "Vartaknagar Manpada Zone",
+                      "costForTwo": "₹300 for two",
+                      "cuisines": [
+                        "Pizzas",
+                        "Pastas",
+                        "Fast Food",
+                        "Snacks",
+                        "Beverages"
+                      ],
+                      "avgRating": 4.3,
+                      "parentId": "11633",
+                      "avgRatingString": "4.3",
+                      "totalRatingsString": "1.5K+",
+                      "sla": {
+                        "deliveryTime": 29,
+                        "lastMileTravel": 3.6,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "25-30 mins",
+                        "lastMileTravelString": "3.6 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-02 05:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "newg.png",
+                            "description": "Gourmet"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "Gourmet",
+                                  "imageId": "newg.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "ITEMS",
+                        "subHeader": "AT ₹99"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "--"
+                        }
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/olio-the-wood-fired-pizzeria-s-v-road-vartaknagar-manpada-zone-rest730204",
+                      "type": "WEBLINK"
+                    }
+                  },
+                  {
+                    "info": {
+                      "id": "512978",
+                      "name": "SMOOR",
+                      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/30/a634d281-18c0-4650-a3c9-54df4da1adeb_512978.jpg",
+                      "locality": "Majiwada",
+                      "areaName": "Thane West",
+                      "costForTwo": "₹350 for two",
+                      "cuisines": ["Desserts", "Bakery"],
+                      "avgRating": 4.5,
+                      "parentId": "3506",
+                      "avgRatingString": "4.5",
+                      "totalRatingsString": "520",
+                      "sla": {
+                        "deliveryTime": 27,
+                        "lastMileTravel": 1.7,
+                        "serviceability": "SERVICEABLE",
+                        "slaString": "25-30 mins",
+                        "lastMileTravelString": "1.7 km",
+                        "iconType": "ICON_TYPE_EMPTY"
+                      },
+                      "availability": {
+                        "nextCloseTime": "2025-01-02 00:00:00",
+                        "opened": true
+                      },
+                      "badges": {
+                        "imageBadges": [
+                          {
+                            "imageId": "newg.png",
+                            "description": "Gourmet"
+                          }
+                        ]
+                      },
+                      "isOpen": true,
+                      "type": "F",
+                      "badgesV2": {
+                        "entityBadges": {
+                          "imageBased": {
+                            "badgeObject": [
+                              {
+                                "attributes": {
+                                  "description": "Gourmet",
+                                  "imageId": "newg.png"
+                                }
+                              }
+                            ]
+                          },
+                          "textBased": {},
+                          "textExtendedBadges": {}
+                        }
+                      },
+                      "aggregatedDiscountInfoV3": {
+                        "header": "ITEMS",
+                        "subHeader": "AT ₹54"
+                      },
+                      "differentiatedUi": {
+                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        "differentiatedUiMediaDetails": {
+                          "lottie": {},
+                          "video": {}
+                        }
+                      },
+                      "reviewsSummary": {},
+                      "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      "restaurantOfferPresentationInfo": {},
+                      "externalRatings": {
+                        "aggregatedRating": {
+                          "rating": "4.1",
+                          "ratingCount": "44"
+                        },
+                        "source": "GOOGLE",
+                        "sourceIconImageId": "v1704440323/google_ratings/rating_google_tag"
+                      },
+                      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+                    },
+                    "analytics": {
+                      "context": "seo-data-7e27984f-e839-4a2a-a190-84418618ab6c"
+                    },
+                    "cta": {
+                      "link": "https://www.swiggy.com/city/mumbai/smoor-majiwada-thane-west-rest512978",
+                      "type": "WEBLINK"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
