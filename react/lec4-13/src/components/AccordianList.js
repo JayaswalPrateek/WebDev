@@ -13,7 +13,7 @@ const AccordianList = (props) => {
                     const { id, name, price, defaultPrice, description } = dish.card.info;
                     const displayPrice = (price ?? defaultPrice) / 100;
                     return (
-                        <li key={id} className="p-4 m-4 border-b-2  border-[grey] text-left">
+                        <li data-testid="dish" key={id} className="p-4 m-4 border-b-2  border-[grey] text-left">
                             <div className="flex justify-between items-center">
                                 <span className="italic font-bold text-xl">{name}</span>
                                 <div className="flex items-center justify-center">
