@@ -1,14 +1,33 @@
-import products from "../data/products.js";
+import products from "../data/products.json" with { type: "json" };
+import { v4 as uuidv4 } from 'uuid';
+import commitDataToFile from "../utils/commitDataToFile.js";
 
 function getAll() {
-    return new Promise.resolve(products);
+    if (products.length != 0)
+        return Promise.resolve(products);
+    else
+        return Promise.reject()
 }
 
 function getByID(id) {
     return new Promise((resolve, reject) => {
         const product = products.find(p => p.id == id);
-        resolve(product);
+        if (product)
+            resolve(product);
+        else reject()
     })
 }
 
-export default { getAll, getByID };
+function create(entry) {
+    return new Promise((resolve, reject) => {
+        const newEntry = { id: uuidv4(), ...entry }
+        products.push(newEntry)
+        // now write the updated product list to the local json file
+        const operation = commitDataToFile("data/products.json", products)
+        if (operation.success)
+            resolve(newEntry)
+        else reject(operation.error)
+    });
+}
+
+export default { getAll, getByID, create };
