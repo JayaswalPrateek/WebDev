@@ -34,25 +34,24 @@ async function getProductByID(request, response, id) {
 
 async function createProduct(request, response) {
     try {
-        const dummy = {
-            // add id dynamically using uuid npm package
-            title: "foo",
-            description: "bar baz",
-            price: 1234
-        }
-        const newProduct = await Product.create(dummy)
-        // if (newProduct) {
-        response.writeHead(201, { "Content-Type": "application/json" })
-        response.write(JSON.stringify(newProduct))
-        // }
-        // No need to handle the else case because
-        // create() resolves only if there is no error
-        // it rejects in case of an error, trigerring the catch block
-        // hence the if block isnt needed either
+        // can create a util to read the body and call resolve(body) on end
+        let body = ''
+        request.on('data', chunk => body += chunk.toString("utf8"))
+        request.on("end", async () => {
+            const newProduct = await Product.create(JSON.parse(body))
+            // if (newProduct) {
+            response.writeHead(201, { "Content-Type": "application/json" })
+            response.write(JSON.stringify(newProduct))
+            // }
+            // No need to handle the else case because
+            // create() resolves only if there is no error
+            // it rejects in case of an error, trigerring the catch block
+            // hence the if block isnt needed either
+            response.end()
+        })
     } catch (error) {
         response.writeHead(422, { "Content-Type": "text-html" })
         response.write(`<h1>422 - Couldn't add ${dummy}</h1>`)
-    } finally {
         response.end()
     }
 }

@@ -1,19 +1,19 @@
-import products from "../data/products.json" with { type: "json" };
-import { v4 as uuidv4 } from 'uuid';
-import commitDataToFile from "../utils/commitDataToFile.js";
+import products from "../data/products.json" with { type: "json" }
+import { v4 as uuidv4 } from 'uuid'
+import commitDataToFile from "../utils/commitDataToFile.js"
 
 function getAll() {
     if (products.length != 0)
-        return Promise.resolve(products);
+        return Promise.resolve(products)
     else
         return Promise.reject()
 }
 
 function getByID(id) {
     return new Promise((resolve, reject) => {
-        const product = products.find(p => p.id == id);
+        const product = products.find(p => p.id == id)
         if (product)
-            resolve(product);
+            resolve(product)
         else reject()
     })
 }
@@ -27,7 +27,7 @@ function create(entry) {
         if (operation.success)
             resolve(newEntry)
         else reject(operation.error)
-    });
+    })
 }
 
-export default { getAll, getByID, create };
+export default { getAll, getByID, create }
