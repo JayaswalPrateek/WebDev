@@ -32,7 +32,7 @@ async function getProductByID(request, response, id) {
     }
 }
 
-async function createProduct(request, response) {
+function createProduct(request, response) {
     try {
         // can create a util to read the body and call resolve(body) on end
         let body = ''
@@ -56,4 +56,33 @@ async function createProduct(request, response) {
     }
 }
 
-export default { getAllProducts, getProductByID, createProduct }
+async function updateProductByID(request, response, id) {
+    try {
+        let body = ''
+        const initialProduct = await Product.getByID(id)
+        request.on('data', chunk => body += chunk.toString("utf8"))
+        request.on("end", async () => {
+            // the PUT request body may not contain all the properties
+            // and instead may only contain the ones that have changed
+            // so we need to merge the changed properties into the old
+            // object to generate the complete updated object:
+            const updatedProduct = Object.assign({}, initialProduct, JSON.parse(body))
+            await Product.update(updatedProduct, id)
+            response.writeHead(200, { "Content-Type": "application/json" })
+            response.write(JSON.stringify(updatedProduct))
+            response.end()
+        })
+    } catch (error) {
+        if (error == 404) {
+            response.writeHead(404, { "Content-Type": "text/html" })
+            response.write("<h1>404 - Not Found</h1>")
+            response.end()
+        } else {
+            response.writeHead(400, { "Content-Type": "text-html" })
+            response.write(`<h1>422 - Couldn't add ${dummy}</h1>`)
+            response.end()
+        }
+    }
+}
+
+export default { getAllProducts, getProductByID, createProduct, updateProductByID }

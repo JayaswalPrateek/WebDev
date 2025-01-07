@@ -4,9 +4,13 @@ import productController from "./controllers/productsController.js"
 const server = http.createServer((request, response) => {
     if (request.url === "/api/products" && request.method === "GET") {
         productController.getAllProducts(request, response)
-    } else if (request.url.match(/\/api\/product\/[0-9]+/) && request.method === "GET") {
+    } else if (request.url.match(/\/api\/product\/[0-9]+/)) {
         const id = request.url.split("/")[3]
-        productController.getProductByID(request, response, id)
+        if (request.method === "GET") {
+            productController.getProductByID(request, response, id)
+        } else if (request.method === "PUT") {
+            productController.updateProductByID(request, response, id)
+        }
     } else if (request.url === "/api/product/new" && request.method === "POST") {
         productController.createProduct(request, response)
     } else {

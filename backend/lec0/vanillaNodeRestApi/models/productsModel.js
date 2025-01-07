@@ -11,10 +11,10 @@ function getAll() {
 
 function getByID(id) {
     return new Promise((resolve, reject) => {
-        const product = products.find(p => p.id == id)
+        const product = products.find(p => p.id === id)
         if (product)
             resolve(product)
-        else reject()
+        else reject(404)
     })
 }
 
@@ -30,4 +30,16 @@ function create(entry) {
     })
 }
 
-export default { getAll, getByID, create }
+function update(entry, id) {
+    return new Promise((resolve, reject) => {
+        const index = products.findIndex((p => p.id === id))
+        products[index] = entry
+        // now write the updated product list to the local json file
+        const operation = commitDataToFile("data/products.json", products)
+        if (operation.success)
+            resolve(entry)
+        else reject(operation.error)
+    })
+}
+
+export default { getAll, getByID, create, update }
