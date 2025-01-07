@@ -10,6 +10,8 @@ const server = http.createServer((request, response) => {
             productController.getProductByID(request, response, id)
         } else if (request.method === "PUT") {
             productController.updateProductByID(request, response, id)
+        } else if (request.method === "DELETE") {
+            productController.deleteProductByID(request, response, id)
         }
     } else if (request.url === "/api/product/new" && request.method === "POST") {
         productController.createProduct(request, response)

@@ -85,4 +85,18 @@ async function updateProductByID(request, response, id) {
     }
 }
 
-export default { getAllProducts, getProductByID, createProduct, updateProductByID }
+async function deleteProductByID(request, response, id) {
+    try {
+        const product = await Product.getByID(id)
+        await Product.del(id)
+        response.writeHead(200, { "Content-Type": "application/json" })
+        response.write(JSON.stringify(product))
+    } catch (error) {
+        response.writeHead(404, { "Content-Type": "text-html" })
+        response.write(`<h1>404 - Product with id=${id} not found</h1>`)
+    } finally {
+        response.end()
+    }
+}
+
+export default { getAllProducts, getProductByID, createProduct, updateProductByID, deleteProductByID }

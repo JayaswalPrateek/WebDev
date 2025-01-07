@@ -11,7 +11,7 @@ function getAll() {
 
 function getByID(id) {
     return new Promise((resolve, reject) => {
-        const product = products.find(p => p.id === id)
+        const product = products.find(p => p.id == id)
         if (product)
             resolve(product)
         else reject(404)
@@ -32,7 +32,7 @@ function create(entry) {
 
 function update(entry, id) {
     return new Promise((resolve, reject) => {
-        const index = products.findIndex((p => p.id === id))
+        const index = products.findIndex((p => p.id == id))
         products[index] = entry
         // now write the updated product list to the local json file
         const operation = commitDataToFile("data/products.json", products)
@@ -42,4 +42,15 @@ function update(entry, id) {
     })
 }
 
-export default { getAll, getByID, create, update }
+function del(id) {
+    return new Promise((resolve, reject) => {
+        const productsAfterDeletion = products.filter(p => p.id != id)
+        // now write the updated product list to the local json file
+        const operation = commitDataToFile("data/products.json", productsAfterDeletion)
+        if (operation.success)
+            resolve()
+        else reject(operation.error)
+    })
+}
+
+export default { getAll, getByID, create, update, del }
