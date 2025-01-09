@@ -36,6 +36,18 @@ app.use(logger)
 app.use("/api/json", router) // must come after middlewares: (a) and (b) ie at the end
 
 import errorHandler from "./middleware/errorHandler.js";
+// app.use(errorHandler)
+// this is not a catch all error handling middleware
+// so it will only work on the routes that use it internally
+
+// so it cant be used if an invalid route is triggered, so we
+// need an app level catch all error handling middleware:
+app.use((request, response, nextMiddleware) => { // can be moved to a seperate file
+    const error = new Error("404 - Not Found")
+    error.status = 404
+    nextMiddleware(error)
+}) // this is sent to app.use(errorHandler)
+
 app.use(errorHandler)
 
 app.listen(8000, () => console.log(`Server Running on Port ${PORT}`));
