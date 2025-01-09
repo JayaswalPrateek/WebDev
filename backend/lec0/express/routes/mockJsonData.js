@@ -22,7 +22,7 @@ router.get("/all", (request, response) => {
 // which is available as a string inside request.params object
 router.get("/:id", (request, response) => {
     const id = parseInt(request.params.id)
-    const result = jsonData.find(item => item.id === id)
+    const result = jsonData.find(item => item.id == id)
     if (result)
         return response.status(200).json(result)
     // else not needed as we return in if block
@@ -37,6 +37,39 @@ router.get("/:id", (request, response) => {
 router.get("/limit/all", (request, response) => {
     const limit = parseInt(request.query.limit)
     if (!isNaN(limit) && limit > 0) return response.status(200).json(jsonData.slice(0, limit))
+    response.status(200).json(jsonData)
+})
+
+// http://localhost:8000/api/json/postDemo
+router.post("/postDemo", (request, response) => {
+    // consume the body using request.body
+    const newEntry = {
+        id: jsonData.length + 1,
+        title: request.body.title,
+    }
+    if (!newEntry.title) return response.status(400).send("<h1>400 - please include title</h1>")
+    jsonData.push(newEntry)
+    response.status(201).json(jsonData)
+})
+
+// Update using PUT Request:
+// http://localhost:8000/api/json/:id
+router.put("/:id", (request, response) => {
+    const id = request.params.id
+    const result = jsonData.find(item => item.id == id)
+    if (!result) return response.status(404).send("<h1>404 - Not Found</h1>")
+    if (!request.body.title) return response.status(400).send("<h1>400 - please include title</h1>")
+    result.title = request.body.title
+    response.status(200).json(jsonData)
+})
+
+// Delete using Delete Request:
+// http://localhost:8000/api/json/:id
+router.delete("/:id", (request, response) => {
+    const id = request.params.id
+    const result = jsonData.find(item => item.id == id)
+    if (!result) return response.status(404).send("<h1>404 - Not Found</h1>")
+    jsonData = jsonData.filter(item => item.id != id)
     response.status(200).json(jsonData)
 })
 

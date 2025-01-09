@@ -24,7 +24,12 @@ app.use(express.static(path.join(__dirname, 'public')))
 // http://localhost:8000/html/file did
 
 import router from "./routes/mockJsonData.js"; // middleware
+
+// body parser middleware to read the body of the POST request:
+app.use(express.json()) // (a) for raw json parsing support
+app.use(express.urlencoded({ extended: false })) // (b) for x-www-form-urlencoded parsing support
+
 // to use this imported middleware:
-app.use("/api/json", router)
+app.use("/api/json", router) // must come after middlewares: (a) and (b) ie at the end
 
 app.listen(8000, () => console.log(`Server Running on Port ${PORT}`));
