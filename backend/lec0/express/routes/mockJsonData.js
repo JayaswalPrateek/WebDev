@@ -78,11 +78,23 @@ router.put("/:id", (request, response) => {
 
 // Delete using Delete Request:
 // http://localhost:8000/api/json/:id
-router.delete("/:id", (request, response) => {
+// router.delete("/:id", (request, response) => {
+//     const id = request.params.id
+//     const result = jsonData.find(item => item.id == id)
+//     if (!result) return response.status(404).send("<h1>404 - Not Found</h1>")
+//     jsonData = jsonData.filter(item => item.id != id)
+//     response.status(200).json(jsonData)
+// })
+// implementing it with an error handling middleware
+router.delete("/:id", (request, response, nextMiddleware) => {
     const id = request.params.id
     const result = jsonData.find(item => item.id == id)
-    if (!result) return response.status(404).send("<h1>404 - Not Found</h1>")
-    jsonData = jsonData.filter(item => item.id != id)
+    if (!result) {
+        const error = new Error(`404 - id ${id} Not Found`)
+        error.status = 404
+        return nextMiddleware(error)
+        // return response.status(404).send("<h1>404 - Not Found</h1>")
+    } jsonData = jsonData.filter(item => item.id != id)
     response.status(200).json(jsonData)
 })
 

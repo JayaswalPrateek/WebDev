@@ -35,4 +35,7 @@ app.use(logger)
 // to use this imported middleware:
 app.use("/api/json", router) // must come after middlewares: (a) and (b) ie at the end
 
+import errorHandler from "./middleware/errorHandler.js";
+app.use(errorHandler)
+
 app.listen(8000, () => console.log(`Server Running on Port ${PORT}`));
