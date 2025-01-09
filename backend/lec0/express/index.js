@@ -29,6 +29,9 @@ import router from "./routes/mockJsonData.js"; // middleware
 app.use(express.json()) // (a) for raw json parsing support
 app.use(express.urlencoded({ extended: false })) // (b) for x-www-form-urlencoded parsing support
 
+import logger from "./middleware/logger.js"
+app.use(logger)
+
 // to use this imported middleware:
 app.use("/api/json", router) // must come after middlewares: (a) and (b) ie at the end
 

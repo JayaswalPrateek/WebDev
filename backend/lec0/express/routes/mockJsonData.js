@@ -1,4 +1,4 @@
-import express from "express";
+import express, { response } from "express";
 
 // here we need to use a router
 const router = express.Router();
@@ -7,6 +7,19 @@ const router = express.Router();
 // like /api/json then it can be abstracted
 // away and specified only once at the time
 // of router.use(prefixStr, importedRouter)
+
+// const loggerMiddleware = (request, response, nextMiddleware) => {
+//     console.log(`Logger: ${request.method} ${request.protocol}://${request.get('host')}${request.originalUrl}`)
+//     nextMiddleware()
+// }
+// to use this middleware at the route level we can pass it as the 2nd argument to the request method function
+// ie between the route string and the callback method
+// router.get("/all", loggerMiddleware, (request, response) => {
+//     response.json(jsonData)
+// })
+// to apply it to all routes, ie at the app level instead of the route level,
+// then move the middleware into a seperate file which exports it and then we
+// import it wherever the express app exists(index.js) and pass it to app.use()
 
 let jsonData = [
     { id: 1, title: "foo" },
