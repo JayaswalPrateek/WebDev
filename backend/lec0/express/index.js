@@ -1,9 +1,9 @@
-import express from "express";
-import path from "path";
-import url from "url";
+import express from "express"
+import path from "path"
+import url from "url"
 
-const app = express();
-const PORT = process.env.PORT;
+const app = express()
+const PORT = process.env.PORT
 const __filename = url.fileURLToPath(import.meta.url) // file://<> -> <>
 const __dirname = path.dirname(__filename)
 
@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 // so http://localhost:8000/index.html works just like
 // http://localhost:8000/html/file did
 
-import router from "./routes/mockJsonData.js"; // middleware
+import router from "./routes/mockJsonData.js" // middleware
 
 // body parser middleware to read the body of the POST request:
 app.use(express.json()) // (a) for raw json parsing support
@@ -35,7 +35,7 @@ app.use(logger)
 // to use this imported middleware:
 app.use("/api/json", router) // must come after middlewares: (a) and (b) ie at the end
 
-import errorHandler from "./middleware/errorHandler.js";
+import errorHandler from "./middleware/errorHandler.js"
 // app.use(errorHandler)
 // this is not a catch all error handling middleware
 // so it will only work on the routes that use it internally
@@ -50,4 +50,4 @@ app.use((request, response, nextMiddleware) => { // can be moved to a seperate f
 
 app.use(errorHandler)
 
-app.listen(8000, () => console.log(`Server Running on Port ${PORT}`));
+app.listen(8000, () => console.log(`Server Running on Port ${PORT}`))
