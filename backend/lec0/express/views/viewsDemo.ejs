@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>viewsDemo</title>
+</head>
+
+<body>
+    <h1>rendered using EJS</h1>
+    <h1>Title: <%= title %>
+    </h1>
+    <h2>Message: <%= message %>
+    </h2>
+    <ul>
+        <% list.forEach(item=> { %>
+            <li>
+                <%= item %>
+            </li>
+            <% }); %>
+    </ul>
+    <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>

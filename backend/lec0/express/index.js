@@ -23,6 +23,24 @@ app.use(express.static(path.join(__dirname, 'public')))
 // so http://localhost:8000/index.html works just like
 // http://localhost:8000/html/file did
 
+// templating using EJS
+// configure app to use EJS:
+app.set("view engine", "ejs")
+app.set("views", "views") // all the views will be in the views directory
+// due to this template engine, we get the access to .render() in the response object
+app.get("/viewsDemo", (request, response) => response.render("viewsDemo", {
+    title: "Dynamically Sent Mesaage",
+    message: "This message was dynamically passed to the ejs template while rendering",
+    list: ["foo", "bar", "baz"]
+}))
+// will render /views/viewsDemo.ejs on GET request at http://localhost:8001/viewsDemo
+// we can also pass some data to the template that is dynamically inserted in it
+// suppose there are multiple view ejs pages and each one has a common footer then
+// instead of having to specify it in each ejs file, we can instead create that footer
+// as a partial in a directory called partial which contains all the reusable elements
+// and then they need to be imported into the ejs file where they can be rendered without
+// explicitly having write them again and again.
+
 import router from "./routes/mockJsonData.js" // middleware
 
 // body parser middleware to read the body of the POST request:
