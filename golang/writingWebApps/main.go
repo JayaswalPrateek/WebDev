@@ -26,6 +26,16 @@ func loadPage(title string) (*Page, error) {
 	return &Page{title, body}, nil
 }
 
+func renderTemplate(w http.ResponseWriter, templFileName string, p *Page) {
+	t, err := template.ParseFiles(templFileName + ".html")
+	if err != nil {
+		fmt.Println("Error: ", err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	t.Execute(w, p)
+}
+
 func viewHandler(w http.ResponseWriter, r *http.Request) {
 	title := r.URL.Path[len("/view/"):]
 	p, err := loadPage(title)
@@ -34,31 +44,20 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusNotFound)
 		return
 	}
-	body := string(p.Body)
-	fmt.Printf("Read: '%s'\n", body)
-	fmt.Fprintf(w, `
-		<h1>%s</h1>
-		<div><i>%s</i></div>
-	`, p.Title, p.Body)
+	fmt.Printf("Read: '%s'\n", p.Body)
+	renderTemplate(w, "view", p)
 }
 
 func editHandler(w http.ResponseWriter, r *http.Request) {
 	title := r.URL.Path[len("/edit/"):]
 	p, err := loadPage(title)
-
 	if err != nil {
 		p = &Page{title, nil}
 	}
-	t, err := template.ParseFiles("edit.html")
-	if err != nil {
-		fmt.Println("Error:", err)
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
-	t.Execute(w, p)
+	renderTemplate(w, "edit", p)
 }
 
 func saveHandler(w http.ResponseWriter, r *http.Request) {
-
 }
 
 func main() {
