@@ -63,12 +63,29 @@ func (h *UserHelper) getUserByID(w http.ResponseWriter, r *http.Request) {
 	w.Write(j)
 }
 
+func (h *UserHelper) deleteUserByID(w http.ResponseWriter, r *http.Request) {
+	id, err := strconv.Atoi(r.PathValue("id"))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	if _, ok := h.userCache[id]; !ok {
+		http.Error(w, "user not found", http.StatusBadRequest)
+		return
+	}
+	h.cacheMutex.Lock()
+	defer h.cacheMutex.Unlock()
+	delete(h.userCache, id)
+	w.WriteHeader(http.StatusNoContent)
+}
+
 func main() {
 	h := &UserHelper{make(map[int]User), sync.RWMutex{}}
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", handleRoot)
 	mux.HandleFunc("POST /users", h.createUser)
 	mux.HandleFunc("GET /user/{id}", h.getUserByID)
+	mux.HandleFunc("DELETE /user/{id}", h.deleteUserByID)
 	fmt.Println("Server listening to :8080 on localhost")
 	http.ListenAndServe(":8080", mux)
 }
