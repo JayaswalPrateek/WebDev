@@ -33,7 +33,12 @@ func renderTemplate(w http.ResponseWriter, templFileName string, p *Page) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	t.Execute(w, p)
+	err = t.Execute(w, p)
+	if err != nil {
+		fmt.Println("Error: ", err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 }
 
 func viewHandler(w http.ResponseWriter, r *http.Request) {
@@ -60,7 +65,12 @@ func saveHandler(w http.ResponseWriter, r *http.Request) {
 	title := r.URL.Path[len("/save/"):]
 	body := r.FormValue("body")
 	p := &Page{title, []byte(body)}
-	p.save()
+	err := p.save()
+	if err != nil {
+		fmt.Println("Error: ", err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 	http.Redirect(w, r, "/view/"+title, http.StatusFound)
 }
 
