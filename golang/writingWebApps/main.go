@@ -40,8 +40,7 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 	title := r.URL.Path[len("/view/"):]
 	p, err := loadPage(title)
 	if err != nil {
-		fmt.Println("Error:", err)
-		http.Error(w, err.Error(), http.StatusNotFound)
+		http.Redirect(w, r, "/edit/"+title, http.StatusFound)
 		return
 	}
 	fmt.Printf("Read: '%s'\n", p.Body)
