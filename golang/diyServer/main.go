@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"strconv"
 	"sync"
@@ -18,11 +19,12 @@ type UserHelper struct {
 }
 
 func handleRoot(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Hello Root")
+	log.Println("handleRoot triggered")
 	fmt.Fprintf(w, "Hello Root")
 }
 
 func (h *UserHelper) createUser(w http.ResponseWriter, r *http.Request) {
+	log.Println("createUser triggered")
 	fmt.Println("Created User")
 	fmt.Fprintf(w, "Created User")
 	var user User
@@ -41,6 +43,7 @@ func (h *UserHelper) createUser(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *UserHelper) getUserByID(w http.ResponseWriter, r *http.Request) {
+	log.Println("getUserByID triggered")
 	id, err := strconv.Atoi(r.PathValue("id"))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
@@ -64,6 +67,7 @@ func (h *UserHelper) getUserByID(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *UserHelper) deleteUserByID(w http.ResponseWriter, r *http.Request) {
+	log.Println("deleteUserByID triggered")
 	id, err := strconv.Atoi(r.PathValue("id"))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
