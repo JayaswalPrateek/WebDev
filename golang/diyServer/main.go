@@ -91,5 +91,5 @@ func main() {
 	mux.HandleFunc("GET /user/{id}", h.getUserByID)
 	mux.HandleFunc("DELETE /user/{id}", h.deleteUserByID)
 	fmt.Println("Server listening to :8080 on localhost")
-	http.ListenAndServe(":8080", mux)
+	log.Fatal(http.ListenAndServe(":8080", mux))
 }
