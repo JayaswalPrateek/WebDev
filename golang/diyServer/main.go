@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"strconv"
 	"sync"
 )
 
@@ -39,11 +40,35 @@ func (h *UserHelper) createUser(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusNoContent)
 }
 
+func (h *UserHelper) getUserByID(w http.ResponseWriter, r *http.Request) {
+	id, err := strconv.Atoi(r.PathValue("id"))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	h.cacheMutex.RLock()
+	defer h.cacheMutex.RUnlock()
+	user, ok := h.userCache[id]
+	if !ok {
+		http.Error(w, fmt.Sprintf("user not found"), http.StatusNotFound)
+		return
+	}
+	j, err := json.Marshal(user)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(j)
+}
+
 func main() {
 	h := &UserHelper{make(map[int]User), sync.RWMutex{}}
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", handleRoot)
 	mux.HandleFunc("POST /users", h.createUser)
+	mux.HandleFunc("GET /user/{id}", h.getUserByID)
 	fmt.Println("Server listening to :8080 on localhost")
 	http.ListenAndServe(":8080", mux)
 }
