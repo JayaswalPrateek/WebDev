@@ -40,6 +40,10 @@ func (h *Handler) handleRegisteration(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	hashedPassword, err := auth.HashPassword(payload.Password)
+	if err != nil {
+		utils.WriteError(w, http.StatusInternalServerError, err)
+		return
+	}
 	err = h.store.CreateUser(types.User{
 		FirstName: payload.FirstName,
 		LastName:  payload.LastName,
@@ -50,10 +54,12 @@ func (h *Handler) handleRegisteration(w http.ResponseWriter, r *http.Request) {
 		utils.WriteError(w, http.StatusInternalServerError, err)
 		return
 	}
-	utils.WriteJSON(w, http.StatusCreated, nil)
+	if err := utils.WriteJSON(w, http.StatusCreated, nil); err != nil {
+		utils.WriteError(w, http.StatusInternalServerError, err)
+	}
 }
 
 func (h *Handler) RegisterRoutes(router *mux.Router) {
 	router.HandleFunc("/login", h.handleLogin).Methods("POST")
-	router.HandleFunc("/register", h.handleRegisteration).Methods("POST ")
+	router.HandleFunc("/register", h.handleRegisteration).Methods("POST")
 }

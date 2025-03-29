@@ -2,6 +2,7 @@ package config
 
 import (
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -26,7 +27,9 @@ func getEnv(key, fallback string) string {
 }
 
 func initConfig() Config {
-	godotenv.Load()
+	if err := godotenv.Load(); err != nil {
+		log.Fatal(err)
+	}
 	DBHost := getEnv("DB_HOST", "127.0.0.1")
 	DBPort := getEnv("DB_PORT", "3306")
 	return Config{
