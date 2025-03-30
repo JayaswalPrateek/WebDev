@@ -1,4 +1,4 @@
-package user
+package user_test
 
 import (
 	"bytes"
@@ -10,6 +10,7 @@ import (
 
 	"github.com/gorilla/mux"
 
+	"ecommerceAPI/services/user"
 	"ecommerceAPI/types"
 )
 
@@ -30,8 +31,9 @@ func (s *mockUserStore) CreateUser(types.User) error {
 
 func TestUserServiceHandlers(t *testing.T) {
 	userStore := &mockUserStore{}
-	handler := NewHandler(userStore)
+	handler := user.NewHandler(userStore)
 	t.Run("Fails when given an valid payload", func(t *testing.T) {
+		t.Parallel()
 		payload := types.ResgisterUserPayload{
 			FirstName: "foo",
 			LastName:  "bar",
@@ -51,7 +53,7 @@ func TestUserServiceHandlers(t *testing.T) {
 		}
 		rr := httptest.NewRecorder()
 		router := mux.NewRouter()
-		router.HandleFunc("/register", handler.handleRegisteration)
+		router.HandleFunc("/register", handler.HandleRegisteration)
 		router.ServeHTTP(rr, req)
 		if rr.Code != http.StatusBadRequest {
 			t.Errorf(
@@ -62,6 +64,7 @@ func TestUserServiceHandlers(t *testing.T) {
 		}
 	})
 	t.Run("Fails when given an invalid payload", func(t *testing.T) {
+		t.Parallel()
 		payload := types.ResgisterUserPayload{
 			FirstName: "foo",
 			LastName:  "bar",
@@ -81,7 +84,7 @@ func TestUserServiceHandlers(t *testing.T) {
 		}
 		rr := httptest.NewRecorder()
 		router := mux.NewRouter()
-		router.HandleFunc("/register", handler.handleRegisteration)
+		router.HandleFunc("/register", handler.HandleRegisteration)
 		router.ServeHTTP(rr, req)
 		if rr.Code != http.StatusCreated {
 			t.Errorf(

@@ -1,7 +1,9 @@
 package user
 
 import (
+	"errors"
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/go-playground/validator/v10"
@@ -20,33 +22,43 @@ func NewHandler(store types.UserStore) *Handler {
 	return &Handler{store}
 }
 
-func (h *Handler) handleLogin(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) HandleLogin(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func (h *Handler) handleRegisteration(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) HandleRegisteration(w http.ResponseWriter, r *http.Request) {
 	var payload types.ResgisterUserPayload
 	if err := utils.ParseJSON(r, &payload); err != nil {
-		utils.WriteError(w, http.StatusBadRequest, err)
+		if err = utils.WriteError(w, http.StatusBadRequest, err); err != nil {
+			log.Fatal(err)
+		}
 		return
 	}
 	if err := utils.Validate.Struct(payload); err != nil {
-		errors := err.(validator.ValidationErrors)
-		utils.WriteError(w,
-			http.StatusBadRequest,
-			fmt.Errorf("invalid payload %v", errors),
-		)
+		var validationErrs validator.ValidationErrors
+		if errors.As(err, &validationErrs) {
+			if err := utils.WriteError(w,
+				http.StatusBadRequest,
+				fmt.Errorf("invalid payload %v", validationErrs),
+			); err != nil {
+				log.Fatal(err)
+			}
+			return
+		}
+		utils.WriteError(w, http.StatusInternalServerError, err)
 		return
 	}
 	_, err := h.store.GetUserByEmail(payload.Email)
 	if err == nil {
-		utils.WriteError(w,
+		if err = utils.WriteError(w,
 			http.StatusBadRequest,
 			fmt.Errorf(
 				"user with email %s already exists",
 				payload.Email,
 			),
-		)
+		); err != nil {
+			log.Fatal(err)
+		}
 		return
 	}
 	hashedPassword, err := auth.HashPassword(payload.Password)
@@ -70,6 +82,6 @@ func (h *Handler) handleRegisteration(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) RegisterRoutes(router *mux.Router) {
-	router.HandleFunc("/login", h.handleLogin).Methods("POST")
-	router.HandleFunc("/register", h.handleRegisteration).Methods("POST")
+	router.HandleFunc("/login", h.HandleLogin).Methods("POST")
+	router.HandleFunc("/register", h.HandleRegisteration).Methods("POST")
 }
