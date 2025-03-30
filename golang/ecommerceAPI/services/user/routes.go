@@ -9,6 +9,7 @@ import (
 	"github.com/go-playground/validator/v10"
 	"github.com/gorilla/mux"
 
+	"ecommerceAPI/config"
 	"ecommerceAPI/services/auth"
 	"ecommerceAPI/types"
 	"ecommerceAPI/utils"
@@ -23,7 +24,51 @@ func NewHandler(store types.UserStore) *Handler {
 }
 
 func (h *Handler) HandleLogin(w http.ResponseWriter, r *http.Request) {
-
+	var payload types.LoginUserPayload
+	if err := utils.ParseJSON(r, &payload); err != nil {
+		if err = utils.WriteError(w, http.StatusBadRequest, err); err != nil {
+			log.Fatal(err)
+		}
+		return
+	}
+	if err := utils.Validate.Struct(payload); err != nil {
+		var validationErrs validator.ValidationErrors
+		if errors.As(err, &validationErrs) {
+			if err := utils.WriteError(w,
+				http.StatusBadRequest,
+				fmt.Errorf("invalid payload %v", validationErrs),
+			); err != nil {
+				log.Fatal(err)
+			}
+			return
+		}
+		utils.WriteError(w, http.StatusInternalServerError, err)
+		return
+	}
+	u, err := h.store.GetUserByEmail(payload.Email)
+	if err != nil {
+		utils.WriteError(
+			w,
+			http.StatusBadRequest,
+			fmt.Errorf("invalid email or password"),
+		)
+		return
+	}
+	if !auth.ComparePassword(u.Password, payload.Password) {
+		utils.WriteError(
+			w,
+			http.StatusBadRequest,
+			fmt.Errorf("invalid email or password"),
+		)
+		return
+	}
+	secret := []byte(config.Envs.JWTSecret)
+	token, err := auth.CreateJWT(secret, u.ID)
+	if err != nil {
+		utils.WriteError(w, http.StatusInternalServerError, err)
+		return
+	}
+	utils.WriteJSON(w, http.StatusOK, map[string]string{"token": token})
 }
 
 func (h *Handler) HandleRegisteration(w http.ResponseWriter, r *http.Request) {
