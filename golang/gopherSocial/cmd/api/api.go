@@ -15,9 +15,17 @@ type config struct {
 	addr string
 }
 
+type dbConfig struct {
+	addr         string
+	maxOpenConns int
+	maxIdleConns int
+	maxIdleTime  string
+}
+
 type application struct {
 	config config
 	store  store.Storage
+	db     dbConfig
 }
 
 func (app *application) mount() *chi.Mux {
